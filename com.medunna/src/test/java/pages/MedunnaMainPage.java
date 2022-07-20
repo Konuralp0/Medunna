@@ -10,7 +10,6 @@ public class MedunnaMainPage {
 
     public MedunnaMainPage(){PageFactory.initElements(Driver.getDriver(), this);}
 
-
     @FindBy(xpath="//a[@class='appointment-btn scrollto']")
     public WebElement makeAnAppointment;
 
@@ -39,6 +38,21 @@ public class MedunnaMainPage {
     public WebElement phone;
     @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='phone']")
     public WebElement phoneVerification;
+
+
+    @FindBy(xpath="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement openSignIn;
+    @FindBy(xpath="//a[@id='login-item']")
+    public WebElement SignIn;
+    @FindBy(xpath="//input[@id='username']")
+    public WebElement username;
+    @FindBy(xpath="//input[@id='password']")
+    public WebElement password;
+    @FindBy(xpath="//button[@type='submit']//span[contains(text(),'Sign in')]")
+    public WebElement SigInButton;
+
+    @FindBy(xpath="//span[normalize-space()='Administration']")
+    public WebElement administration;
 
 
 

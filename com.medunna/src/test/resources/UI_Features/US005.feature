@@ -4,7 +4,7 @@ Feature:
     And   Make appointment butonuna tiklar
     And   First name kutusuna uygun isim girer
     Then  hata mesajinin cikmadigini test eder
-#    And   tarayiciyi kapatir
+   And   tarayiciyi kapatir
 
 
 
@@ -34,4 +34,14 @@ Feature:
     And   Make appointment butonuna tiklar
     And   Telefon kutusuna uygun telefon numarasi girer
     Then  Telefon numarasi icin hata mesajinin cikmadigini test eder
+#    And   tarayiciyi kapatir.
+
+
+  Scenario:Kullanıcı randevu alıp kaydolduğunda, profillerini görebilir ve uygulamada oturum açabilir.
+    Given Medunna ana sayfasina gider
+    And   ana sayfa giris ikonuna tiklar
+    And   Sign in secenegini secer
+    And   kullanici adini ve sifresini girer
+    And   Sign in butonuna tiklar
+    Then  uygulamada oturum actigini test eder
 #    And   tarayiciyi kapatir.

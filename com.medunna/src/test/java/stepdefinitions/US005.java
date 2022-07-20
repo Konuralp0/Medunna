@@ -1,6 +1,6 @@
 package stepdefinitions;
 
-import com.github.javafaker.Faker;
+//import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +12,7 @@ import utilities.Driver;
 
 public class US005 {
     MedunnaMainPage mainPage=new MedunnaMainPage();
-    Faker faker=new Faker();
+    //Faker faker=new Faker();
 
     @Given("Medunna ana sayfasina gider")
     public void medunna_ana_sayfasina_gider() {
@@ -79,15 +79,41 @@ public class US005 {
 
     @And("Telefon kutusuna uygun telefon numarasi girer")
     public void telefonKutusunaUygunTelefonNumarasiGirer() {
-        //mainPage.phone.sendKeys("123-456-1234");
+        mainPage.phone.sendKeys("123-456-1234");
 
-        mainPage.phone.sendKeys(faker.random().nextInt(100, 999)+"-"+
-                faker.random().nextInt(100, 999)+"-"+faker.random().nextInt(1000, 9999));
+        //mainPage.phone.sendKeys(faker.random().nextInt(100, 999)+"-"+
+            //    faker.random().nextInt(100, 999)+"-"+faker.random().nextInt(1000, 9999));
     }
 
     @Then("Telefon numarasi icin hata mesajinin cikmadigini test eder")
     public void telefonNumarasiIcinHataMesajininCikmadiginiTestEder() {
         Assert.assertTrue("Hata mesaji gorundu",mainPage.phoneVerification.isDisplayed());
 
+    }
+
+    @And("ana sayfa giris ikonuna tiklar")
+    public void anaSayfaGirisIkonunaTiklar() {
+        mainPage.openSignIn.click();
+    }
+
+    @And("Sign in secenegini secer")
+    public void signInSeceneginiSecer() {
+        mainPage.SignIn.click();
+    }
+
+    @And("kullanici adini ve sifresini girer")
+    public void kullaniciAdiniVeSifresiniGirer() {
+        mainPage.username.sendKeys("infoTech" +Keys.TAB);
+        mainPage.password.sendKeys("Admin123.");
+    }
+
+    @And("Sign in butonuna tiklar")
+    public void signInButonunaTiklar() {
+        mainPage.SigInButton.click();
+    }
+
+    @Then("uygulamada oturum actigini test eder")
+    public void uygulamadaOturumActiginiTestEder() {
+        Assert.assertTrue("Hesaba giris yapilamadi",mainPage.administration.isDisplayed());
     }
 }
