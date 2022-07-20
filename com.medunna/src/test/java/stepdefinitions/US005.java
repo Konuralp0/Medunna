@@ -37,10 +37,6 @@ public class US005 {
 
     }
 
-    @Then("tarayiciyi kapatir")
-    public void tarayiciyi_kapatir() {
-        Driver.closeDriver();
-    }
 
     @And("SSN kutusuna uygun ssn girer")
     public void ssnKutusunaUygunSsnGirer() {

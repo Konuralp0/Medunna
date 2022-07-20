@@ -3,8 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.it.Date;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
+
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,6 +12,7 @@ import pages.MedunnaMainPage;
 import utilities.Driver;
 
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class US007 {
