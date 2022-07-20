@@ -9,7 +9,7 @@
         <module name="com.medunna" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="18">
       <module name="com.medunna" target="18" />
     </bytecodeTargetLevel>
   </component>
