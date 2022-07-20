@@ -16,6 +16,11 @@ public class MedunnaMainPage {
     public WebElement signInRegister;
 
 
+    @FindBy(xpath="//input[@id='appoDate']") public WebElement appoDate;
+
+    @FindBy(xpath="//span[normalize-space()='Appointment date can not be past date!']") public WebElement appointmentDateCanNotBePa;
+
+
 
 
 

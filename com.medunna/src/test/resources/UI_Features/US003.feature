@@ -1,8 +1,7 @@
 @us003
 
 Feature: US003
-
-  Scenario: Registration sayfasında guclu sifre girilmeli ve Password strength seviyeleri gorulebilmelidir
+  Scenario:  Registration sayfasında guclu sifre girilmeli ve Password strength seviyeleri gorulebilmelidir
 
     Given medunna ana sayfasina gider
      And anasayfada giris ikonuna tiklar

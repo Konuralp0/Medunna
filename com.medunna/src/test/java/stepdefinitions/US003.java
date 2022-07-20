@@ -23,13 +23,13 @@ public class US003 {
     public void anasayfadaGirisIkonunaTiklar() {
 
         mainPage.signInRegister.click();
-        pause();
+        Driver.wait(2);
     }
 
     @And("Register butonuna tiklar")
     public void registerButonunaTiklar() {
         registerPage.register.click();
-        pause();
+        Driver.wait(2);
     }
 
     @And("New password yerine dort harfli ilk harfi buyuk bir sifre girer")
@@ -41,7 +41,7 @@ public class US003 {
     @And("uc kucuk harf daha girer")
     public void ucKucukHarfDahaGirer() {
         registerPage.newPassword.sendKeys("nnn");
-        pause();
+        Driver.wait(2);
     }
 
     @Then("Strength barin bir arttgini test eder")
@@ -51,7 +51,7 @@ public class US003 {
         String hexColor = Color.fromString(secondBarColor).asHex();
 
         Assert.assertEquals(hexColor,expectedSecondBarColor);
-        pause();
+        Driver.wait(2);
 
 
 
@@ -70,7 +70,7 @@ public class US003 {
 
         Assert.assertEquals(expectedFourthBarColor,hexColor);
 
-        pause();
+        Driver.wait(2);
     }
 
     @And("bir ozel karakter girer")
@@ -85,7 +85,7 @@ public class US003 {
         String hexColor = Color.fromString(fifthBarColor).asHex();
 
         Assert.assertEquals(expectedFifthBarColor,hexColor);
-        pause();
+        Driver.wait(2);
     }
     @And("tarayiciyi kapatir")
     public void tarayiciyiKapatir() {
@@ -95,12 +95,6 @@ public class US003 {
 
 
 
-    public static void pause(){
-        try {
-            sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
     }
-}
+
