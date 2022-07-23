@@ -20,3 +20,10 @@ Feature: US007
     And tarayiciyi kapatir
 
 
+
+    Scenario: API kullanarak randevular olusturulabilmelidir
+      Given Kullanici randevu icin data olusturur
+      And Kullanici olusturdugu randevuyu post request ile gonderir
+      Then Kullanici kayitlari dogrular
+
+
