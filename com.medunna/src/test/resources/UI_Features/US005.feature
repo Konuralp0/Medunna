@@ -1,4 +1,5 @@
-Feature:
+@us005
+Feature:US005
   Scenario: Kullanıcının herhangi bir karakter içeren "First Name" yazması gerekir ve boş bırakılamaz.
     Given Medunna ana sayfasina gider
     And   Make appointment butonuna tiklar

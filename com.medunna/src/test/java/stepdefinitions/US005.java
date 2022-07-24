@@ -1,11 +1,10 @@
 package stepdefinitions;
 
-//import com.github.javafaker.Faker;
-import dev.failsafe.internal.util.Assert;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-//import org.junit.Assert;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.MedunnaMainPage;
 import utilities.ConfigReader;
@@ -15,7 +14,7 @@ public class US005 {
 
 
     MedunnaMainPage mainPage=new MedunnaMainPage();
-    //Faker faker=new Faker();
+    Faker faker=new Faker();
 
     @Given("Medunna ana sayfasina gider")
     public void medunna_ana_sayfasina_gider() {
@@ -40,10 +39,6 @@ public class US005 {
 
     }
 
-    @Then("tarayiciyi kapatir")
-    public void tarayiciyi_kapatir() {
-        Driver.closeDriver();
-    }
 
     @And("SSN kutusuna uygun ssn girer")
     public void ssnKutusunaUygunSsnGirer() {
@@ -82,10 +77,10 @@ public class US005 {
 
     @And("Telefon kutusuna uygun telefon numarasi girer")
     public void telefonKutusunaUygunTelefonNumarasiGirer() {
-        mainPage.phone.sendKeys("123-456-1234");
+        //mainPage.phone.sendKeys("123-456-1234");
 
-        //mainPage.phone.sendKeys(faker.random().nextInt(100, 999)+"-"+
-            //    faker.random().nextInt(100, 999)+"-"+faker.random().nextInt(1000, 9999));
+        mainPage.phone.sendKeys(faker.random().nextInt(100, 999)+"-"+
+              faker.random().nextInt(100, 999)+"-"+faker.random().nextInt(1000, 9999));
     }
 
     @Then("Telefon numarasi icin hata mesajinin cikmadigini test eder")

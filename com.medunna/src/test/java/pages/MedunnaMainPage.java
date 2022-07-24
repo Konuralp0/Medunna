@@ -14,15 +14,9 @@ public class MedunnaMainPage {
     @FindBy(xpath="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement signInRegister;
 
-
     @FindBy(xpath="//input[@id='appoDate']") public WebElement appoDate;
 
     @FindBy(xpath="//span[normalize-space()='Appointment date can not be past date!']") public WebElement appointmentDateCanNotBePa;
-
-
-
-
-
 
     @FindBy(xpath="//input[@id='firstName']")
     public WebElement firstName;
@@ -31,7 +25,8 @@ public class MedunnaMainPage {
 
     @FindBy(xpath="//input[@id='ssn']")
     public WebElement SSN;
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='ssn']")
+
+    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @name='ssn']")
     public WebElement ssnVerification;
 
 
@@ -50,7 +45,6 @@ public class MedunnaMainPage {
     @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='phone']")
     public WebElement phoneVerification;
 
-
     @FindBy(xpath="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement openSignIn;
     @FindBy(xpath="//a[@id='login-item']")
@@ -61,9 +55,9 @@ public class MedunnaMainPage {
     public WebElement password;
     @FindBy(xpath="//button[@type='submit']//span[contains(text(),'Sign in')]")
     public WebElement SigInButton;
-
     @FindBy(xpath="//span[normalize-space()='Administration']")
     public WebElement administration;
+
 
 
 
