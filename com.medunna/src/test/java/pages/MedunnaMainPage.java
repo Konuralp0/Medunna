@@ -66,6 +66,18 @@ public class MedunnaMainPage {
     public WebElement administration;
 
 
+    @FindBy(xpath="//span[normalize-space()='Items&Titles']") public WebElement itemsAndTitles;
+    @FindBy(xpath="//a[@class='dropdown-item active']") public WebElement patient;
+
+
+    @FindBy(xpath="//span[normalize-space()='MY PAGES']") public WebElement mYPAGES;
+
+    @FindBy(xpath="//span[normalize-space()='My Appointments']") public WebElement myAppointments;
+
+
+
+
+
 
 
 

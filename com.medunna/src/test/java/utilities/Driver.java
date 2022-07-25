@@ -53,6 +53,11 @@ public class Driver {
         }
 
     }
+    public static void refresh(){
+        driver.navigate().refresh();
+    }
+
+
     
 
 }
