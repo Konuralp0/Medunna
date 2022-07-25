@@ -19,6 +19,7 @@ public class US005 {
     @Given("Medunna ana sayfasina gider")
     public void medunna_ana_sayfasina_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+        Driver.wait(1);
     }
 
 
@@ -96,7 +97,7 @@ public class US005 {
 
     @And("Sign in secenegini secer")
     public void signInSeceneginiSecer() {
-        mainPage.SignIn.click();
+        mainPage.signIn.click();
     }
 
     @And("kullanici adini ve sifresini girer")
@@ -107,7 +108,7 @@ public class US005 {
 
     @And("Sign in butonuna tiklar")
     public void signInButonunaTiklar() {
-        mainPage.SigInButton.click();
+        mainPage.sigInButton.click();
     }
 
     @Then("uygulamada oturum actigini test eder")
