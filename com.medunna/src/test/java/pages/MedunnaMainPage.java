@@ -26,9 +26,8 @@ public class MedunnaMainPage {
     @FindBy(xpath="//input[@id='ssn']")
     public WebElement SSN;
 
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @name='ssn']")
+    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' ]") //"and @name='ssn'" kismi hata verdigi icin cikardim.
     public WebElement ssnVerification;
-
 
     @FindBy(xpath="//input[@id='lastName']")
     public WebElement lastName;

@@ -1,10 +1,11 @@
 package stepdefinitions;
 
+import groovyjarjarasm.asm.tree.TryCatchBlockNode;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.testng.asserts.SoftAssert;
 import pages.MedunnaMainPage;
 import pages.MedunnaStaffPage;
 import utilities.Driver;
@@ -12,7 +13,6 @@ import utilities.Driver;
 public class US009 {
     MedunnaMainPage mainPage=new MedunnaMainPage();
     MedunnaStaffPage staffPage=new MedunnaStaffPage();
-    SoftAssert softAssert = new SoftAssert();
 
     @And("Staff olarak giris yapar")
     public void staffOlarakGirisYapar() {
@@ -109,8 +109,14 @@ public class US009 {
 
     @Then("Delete butonunun olmadigini boylece hastalari silemedigini test eder")
     public void deleteButonununOlmadiginiBoyleceHastalariSilemediginiTestEder() {
-       // Assert.assertFalse(staffPage.deleteButton.isDisplayed());
-        //Assert.assertEquals(false, staffPage.deleteButton.isDisplayed());
 
+        Boolean sonuc = null;
+        try{
+            Assert.assertFalse(staffPage.deleteButton.isDisplayed());
+        }catch (Exception e){
+           sonuc= false;
+        }
+        Assert.assertEquals(false, sonuc);
     }
+
 }

@@ -26,8 +26,23 @@
       And   Search patient sekmesine tiklar
       And   SSN numarasi girilen hastanin kaydina ulasildigini test eder
       Then  Hastanin tum bilgilerinin dolduruldugunu gorebilir
-
       And   tarayiciyi kapatir
+
+    Scenario:Kullanıcı, API kullanarak tüm hasta bilgilerini doğrulamalıdır.
+      Given
+
+
+
+    Scenario:Kullanıcının DB'den gelen tüm hasta bilgilerini doğrulamalıdır.
+      Given
+
+
+    Scenario: Kullanıcı herhangi bir hasta bilgisini silebilir.
+      Given
+
+
+
+
 
     Scenario:Staff hastaları silememeli
       Given Medunna ana sayfasina gider
