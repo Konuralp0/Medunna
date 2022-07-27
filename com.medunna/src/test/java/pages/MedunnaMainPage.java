@@ -54,13 +54,13 @@ public class MedunnaMainPage {
     @FindBy(xpath="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement openSignIn;
     @FindBy(xpath="//a[@id='login-item']")
-    public WebElement SignIn;
+    public WebElement signIn;
     @FindBy(xpath="//input[@id='username']")
     public WebElement username;
     @FindBy(xpath="//input[@id='password']")
     public WebElement password;
     @FindBy(xpath="//button[@type='submit']//span[contains(text(),'Sign in')]")
-    public WebElement SigInButton;
+    public WebElement sigInButton;
 
     @FindBy(xpath="//span[normalize-space()='Administration']")
     public WebElement administration;
