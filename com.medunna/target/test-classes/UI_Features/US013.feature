@@ -24,4 +24,4 @@ Feature: US013
     And   Mypages butonuna tiklar
     Then  MyAppointmenti secer
     And   Edit butonuna tiklar
-    Then Request inpatient butonunun oldugunu test eder
+    Then  Request inpatient butonunun oldugunu test eder
