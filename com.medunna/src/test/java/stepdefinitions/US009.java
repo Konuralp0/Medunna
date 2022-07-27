@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.MedunnaMainPage;
 import pages.MedunnaStaffPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US009 {
@@ -18,8 +19,8 @@ public class US009 {
     public void staffOlarakGirisYapar() {
         mainPage.signInRegister.click();
         mainPage.signIn.click();
-        mainPage.username.sendKeys("sstaff" + Keys.TAB);
-        mainPage.password.sendKeys("staf1234"+Keys.TAB);
+        mainPage.username.sendKeys(ConfigReader.getProperty("staffUsername") + Keys.TAB);
+        mainPage.password.sendKeys(ConfigReader.getProperty("staffPassword")+Keys.TAB);
         mainPage.sigInButton.click();
         Driver.wait(2);
 

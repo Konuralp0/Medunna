@@ -29,4 +29,14 @@ public class MedunnaAppointmentPage {
 
     @FindBy(xpath="//body//div//div//div//div//div//div//div//div//div//div[1]//div[1]//div[1]") public WebElement thisFieldIsRequired;
     @FindBy(xpath="//select[@id='appointment-status']") public WebElement statusChange;
+
+    @FindBy(xpath="//a[@class='btn btn-danger btn-sm']") public WebElement showTestResults;
+    @FindBy(xpath="//span[@class='d-none d-md-inline']") public WebElement viewResults;
+    @FindBy(xpath="//tbody/tr/td[2]")  public WebElement tableSonuc1;
+    @FindBy(xpath="//tbody/tr[2]/td[2]")  public WebElement tableSonuc2;
+    @FindBy(xpath="//tbody/tr[3]/td[2]")  public WebElement tableSonuc3;
+    @FindBy(xpath="//button[@class='btn btn-warning btn-sm']") public WebElement requestInpatient;
+
+
+
 }

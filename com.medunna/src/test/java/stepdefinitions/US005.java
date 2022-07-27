@@ -94,18 +94,18 @@ public class US005 {
 
     @And("Sign in secenegini secer")
     public void signInSeceneginiSecer() {
-        mainPage.SignIn.click();
+        mainPage.signIn.click();
     }
 
     @And("kullanici adini ve sifresini girer")
     public void kullaniciAdiniVeSifresiniGirer() {
-        mainPage.username.sendKeys("infoTech" +Keys.TAB);
-        mainPage.password.sendKeys("Admin123.");
+        mainPage.username.sendKeys(ConfigReader.getProperty("adminUsername") +Keys.TAB);
+        mainPage.password.sendKeys(ConfigReader.getProperty("adminPassword"));
     }
 
     @And("Sign in butonuna tiklar")
     public void signInButonunaTiklar() {
-        mainPage.SigInButton.click();
+        mainPage.sigInButton.click();
     }
 
     @Then("uygulamada oturum actigini test eder")
