@@ -6,7 +6,7 @@ Feature:US009
     And   My Pages sekmesine tiklar
     And   Search patient sekmesine tiklar
     Then  Hasta bilgilerini gorebildigini test eder
-          #      And   tarayiciyi kapatir
+    And   tarayiciyi kapatir
 
   Scenario: Kullanıcı butun hasta bilgilerini "firstname, lastname, birthdate, email, phone, gender, blood group, address, description,
   user, country and state/city" duzenleyebilmelidir.
@@ -16,7 +16,8 @@ Feature:US009
     And   Search patient sekmesine tiklar
     And   Hasta bilgilerini duzenlemek icin Edit butonuna tiklar
     Then  Hasta bilgilerini duzenleyebilecegi sayfada oldugunu test eder
-          #        And   tarayiciyi kapatir
+    And   tarayiciyi kapatir
+
   Scenario: Kullanıcı, SSN'lerine göre yeni bir başvuru sahibi arayabilmeli
   ve tüm kayıt bilgilerinin doldurulduğunu görebilmelidir.
 
@@ -50,5 +51,6 @@ Feature:US009
     And   My Pages sekmesine tiklar
     And   Search patient sekmesine tiklar
     Then  Delete butonunun olmadigini boylece hastalari silemedigini test eder
+    And   tarayiciyi kapatir
 
 

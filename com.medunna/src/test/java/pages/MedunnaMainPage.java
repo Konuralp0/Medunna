@@ -26,28 +26,28 @@ public class MedunnaMainPage {
 
     @FindBy(xpath="//input[@id='firstName']")
     public WebElement firstName;
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='firstName']")
+    @FindBy (xpath ="//div[normalize-space()='Your FirstName is required.']")
     public WebElement nameVerification;
 
     @FindBy(xpath="//input[@id='ssn']")
     public WebElement SSN;
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='ssn']")
+    @FindBy (xpath ="//div[normalize-space()='Your SSN is required.']")
     public WebElement ssnVerification;
 
 
     @FindBy(xpath="//input[@id='lastName']")
     public WebElement lastName;
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='lastName']")
+    @FindBy (xpath ="//div[normalize-space()='Your LastName is required.']")
     public WebElement lastNameVerification;
 
     @FindBy(xpath="//input[@id='email']")
     public WebElement email;
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='email']")
+    @FindBy (xpath ="//div[normalize-space()='Your email is required.']")
     public WebElement emailVerification;
 
     @FindBy(xpath="//input[@id='phone']")
     public WebElement phone;
-    @FindBy (xpath ="//input[@class= 'is-touched is-dirty av-valid form-control' and @id='phone']")
+    @FindBy (xpath ="//div[normalize-space()='Phone number is required.']")
     public WebElement phoneVerification;
 
 
