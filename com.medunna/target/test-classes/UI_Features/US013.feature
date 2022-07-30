@@ -14,6 +14,7 @@ Feature: US013
     And   Show test results butonuna tiklar
     And   View results butonuna tiklar
     Then  Test sonuclarinin gorulebildigini test eder
+    And   tarayiciyi kapatir
 
   Scenario: Doktor "Request Impatient" (hastanın yatılı tedavi görmesi) isteğinde bulunabilmeli
     Given medunna ana sayfasina gider
@@ -25,3 +26,4 @@ Feature: US013
     Then  MyAppointmenti secer
     And   Edit butonuna tiklar
     Then  Request inpatient butonunun oldugunu test eder
+    And   tarayiciyi kapatir

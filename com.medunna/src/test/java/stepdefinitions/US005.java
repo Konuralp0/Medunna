@@ -13,7 +13,7 @@ import utilities.Driver;
 public class US005 {
     MedunnaMainPage mainPage=new MedunnaMainPage();
     //Faker faker=new Faker();
-
+    US007 us007=new US007();
     @Given("Medunna ana sayfasina gider")
     public void medunna_ana_sayfasina_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
@@ -27,13 +27,13 @@ public class US005 {
 
     @Given("First name kutusuna uygun isim girer")
     public void first_name_kutusuna_uygun_isim_girer() {
-        mainPage.firstName.sendKeys("Fatma"+ Keys.TAB);
+        mainPage.firstName.sendKeys("Fatma");
 
     }
 
     @Then("hata mesajinin cikmadigini test eder")
     public void hata_mesajinin_cikmadigini_test_eder() {
-        Assert.assertTrue("Hata mesaji gorundu",mainPage.nameVerification.isDisplayed());
+        us007.isPresent(mainPage.nameVerification);
 
     }
 
@@ -42,11 +42,12 @@ public class US005 {
     public void ssnKutusunaUygunSsnGirer() {
         mainPage.SSN.sendKeys("012-34-5678");
 
+
     }
 
     @Then("SSN icin hata mesajinin cikmadigini test eder")
     public void ssnIcinHataMesajininCikmadiginiTestEder() {
-        Assert.assertTrue("Hata mesaji gorundu",mainPage.ssnVerification.isDisplayed());
+        us007.isPresent(mainPage.ssnVerification);
 
     }
 
@@ -58,7 +59,7 @@ public class US005 {
 
     @Then("Lastname icin hata mesajinin cikmadigini test eder")
     public void lastnameIcinHataMesajininCikmadiginiTestEder() {
-        Assert.assertTrue("Hata mesaji gorundu",mainPage.lastNameVerification.isDisplayed());
+        us007.isPresent(mainPage.lastNameVerification);
     }
 
     @And("e-mail kutusuna uygun e-mail girer")
@@ -69,7 +70,7 @@ public class US005 {
 
     @Then("e-mail icin hata mesajinin cikmadigini test eder")
     public void eMailIcinHataMesajininCikmadiginiTestEder() {
-        Assert.assertTrue("Hata mesaji gorundu",mainPage.emailVerification.isDisplayed());
+        us007.isPresent(mainPage.emailVerification);
 
     }
 
@@ -83,7 +84,7 @@ public class US005 {
 
     @Then("Telefon numarasi icin hata mesajinin cikmadigini test eder")
     public void telefonNumarasiIcinHataMesajininCikmadiginiTestEder() {
-        Assert.assertTrue("Hata mesaji gorundu",mainPage.phoneVerification.isDisplayed());
+        us007.isPresent(mainPage.emailVerification);
 
     }
 
