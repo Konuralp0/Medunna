@@ -35,6 +35,7 @@ public class US009 {
     @And("Search patient sekmesine tiklar")
     public void searchPatientSekmesineTiklar() {
         staffPage.searchPatient.click();
+        Driver.wait(1);
     }
 
     @Then("Hasta bilgilerini gorebildigini test eder")
