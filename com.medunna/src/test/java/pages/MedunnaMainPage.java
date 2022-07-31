@@ -73,6 +73,10 @@ public class MedunnaMainPage {
     @FindBy(xpath="//span[normalize-space()='MY PAGES']") public WebElement mYPAGES;
 
     @FindBy(xpath="//span[normalize-space()='My Appointments']") public WebElement myAppointments;
+    @FindBy(xpath=" //span[normalize-space()='Send an Appointment Request']") public WebElement sendAppointmentRequestButton;
+    @FindBy(xpath=" //div[@class='Toastify']//span[1]") public WebElement isAppointmentSuccessful;
+
+
 
 
 
