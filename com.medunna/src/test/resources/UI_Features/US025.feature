@@ -15,3 +15,6 @@
       Then  Telefon numarasi icin hata mesajinin cikmadigini test eder
       And   Send an appointment request butonuna tiklar
       Then  Appointment kaydinin basarili oldugunu dogrular
+
+
+
