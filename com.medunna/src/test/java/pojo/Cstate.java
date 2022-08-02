@@ -5,13 +5,15 @@ public class Cstate{
 	private String name;
 	private int id;
 
-	@Override
- 	public String toString(){
-		return 
-			"Cstate{" + 
-			"country = '" + country + '\'' + 
-			",name = '" + name + '\'' + 
-			",id = '" + id + '\'' + 
-			"}";
-		}
+	public Country getCountry(){
+		return country;
+	}
+
+	public String getName(){
+		return name;
+	}
+
+	public int getId(){
+		return id;
+	}
 }

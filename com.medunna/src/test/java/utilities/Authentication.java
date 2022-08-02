@@ -16,8 +16,8 @@ public class Authentication {
         String url = "https://medunna.com/api/authenticate";
 
         Map<String, String> expectedData = new HashMap();
-        expectedData.put("username","infoTech02");
-        expectedData.put("password","Admin123.");
+        expectedData.put("usernamePhysician","infoTech02");
+        expectedData.put("passwordPhysician","Admin123.");
 
         Response response = given().contentType(ContentType.JSON).body(expectedData).when().post(url);
 

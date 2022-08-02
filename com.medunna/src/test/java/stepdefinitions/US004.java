@@ -15,10 +15,7 @@ public class US004 {
     MedunnaMainPage mainPage = new MedunnaMainPage();
     MedunnaLoginPage loginPage =new MedunnaLoginPage();
 
-    @Given("medunna ana sayfasina gider")
-    public void medunna_ana_sayfasina_gider() {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
-    }
+
 
 
 

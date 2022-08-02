@@ -6,11 +6,16 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MedunnaAppointmentPage;
 import pages.MedunnaMainPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+
+import java.time.Duration;
 
 
 public class US011 {
@@ -20,8 +25,8 @@ public class US011 {
     @And("kullanici olusturdugu adini ve sifresini girer")
     public void kullaniciOlusturduguAdiniVeSifresiniGirer() {
 
-        mainPage.username.sendKeys(ConfigReader.getProperty("username"));
-        mainPage.password.sendKeys(ConfigReader.getProperty("password"));
+        mainPage.username.sendKeys(ConfigReader.getProperty("usernamePhysician"));
+        mainPage.password.sendKeys(ConfigReader.getProperty("passwordPhysician"));
 
         Driver.wait(2);
 
@@ -51,7 +56,7 @@ public class US011 {
     @Then("Edit sayfasinda oldugunu test eder")
     public void editSayfasindaOldugunuTestEder() {
         String url = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals("https://www.medunna.com/appointment-update/135183",url);
+        Assert.assertEquals("https://www.medunna.com/appointment-update/153041",url);
         Driver.wait(2);
 
 
@@ -71,8 +76,9 @@ public class US011 {
 
     @And("Save butonuna tiklar")
     public void saveButonunaTiklar() {
-        medunnaAppointmentPage.save.click();
         Driver.wait(2);
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(medunnaAppointmentPage.save)).click();
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(medunnaAppointmentPage.save)).click();
 
 
 
@@ -88,18 +94,20 @@ public class US011 {
         Assert.assertTrue(medunnaAppointmentPage.status.isDisplayed());
     }
 
-    @And("Statusu degisitirir")
-    public void statusuDegisitirir() {
+
+    @And("Statusu degisitirebildigini test eder")
+    public void statusuDegisitirebildiginiTestEder() {
         Select select = new Select(medunnaAppointmentPage.statusChange);
         select.selectByVisibleText("COMPLETED");
         Driver.wait(2);
+        medunnaAppointmentPage.anamnesis.click();
+        Assert.assertEquals("form-control is-touched is-dirty av-valid form-control",medunnaAppointmentPage.statusChange.getAttribute("class"));
+
+
+
+
     }
 
-    @And("Statusun degistigini kontrol eder")
-    public void statusunDegistiginiKontrolEder() {
-        Assert.assertEquals("COMPLETED", medunnaAppointmentPage.status.getText());
-
-    }
 
 
     public boolean isPresent(WebElement element){
@@ -112,6 +120,7 @@ public class US011 {
 
 
     }
+
 
 
 }
