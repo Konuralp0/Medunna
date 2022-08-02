@@ -14,6 +14,7 @@ Feature: My Appointments Doktor Tarafindan duzenlebilmeli
 
 
 
+
     Scenario: Bir randevu guncelleginde doktor yeni guncel bilgileri my appointmensta gorebilmelidir "id, start and end date, Status, physician and patient" &
     Doktor gerekli alanlara "Anamnesis, Treatment ve Diagnosis" yazabilmelidir & Prescription ve Description istege bagli olmalidir
 

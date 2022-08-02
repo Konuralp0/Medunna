@@ -10,7 +10,7 @@ Feature: My Appointments Doktor Tarafindan duzenlebilmeli
     Then MyAppointmenti secer
     And Edit butonuna tiklar
     Then Edit sayfasinda oldugunu test eder
-    And tarayiciyi kapatir
+#    And tarayiciyi kapatir
 
 
 

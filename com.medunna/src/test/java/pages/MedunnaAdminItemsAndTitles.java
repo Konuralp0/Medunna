@@ -36,4 +36,20 @@ public class MedunnaAdminItemsAndTitles {
     @FindBy(xpath="//input[@id='patient-adress']") public WebElement address;
     @FindBy(xpath="//select[@id='patient-country']") public WebElement countryName;
     @FindBy(xpath="//select[@id='patient-cstate']") public WebElement stateCityName;
+
+    @FindBy(xpath="//span[normalize-space()='Items&Titles']") public WebElement itemsTitlesButton;
+    @FindBy(xpath="//span[normalize-space()='Test Item']") public WebElement testItemButton;
+    @FindBy(xpath="//span[normalize-space()='Create a new Test Item']") public WebElement createTestItemButton;
+
+    @FindBy(xpath="(//span[normalize-space()='Name'])") public WebElement nameLabel;
+    @FindBy(xpath="//span[normalize-space()='Description']") public WebElement descriptionLabel;
+    @FindBy(xpath="//span[normalize-space()='Price']") public WebElement priceLabel;
+    @FindBy(xpath="//span[normalize-space()='Default Min. Value']") public WebElement defaultValMinLabel;
+    @FindBy(xpath="//span[normalize-space()='Default Max. Value']") public WebElement defaultValMaxLabel;
+    @FindBy(xpath="//span[normalize-space()='Created Date']") public WebElement createdLabel;
+    @FindBy(xpath="//span[normalize-space()='Test Items']") public WebElement testItems;
+    @FindBy(xpath="//a[@class='btn btn-danger btn-sm']") public WebElement deleteButton;
+
+
+
 }
