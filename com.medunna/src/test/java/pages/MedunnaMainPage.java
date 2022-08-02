@@ -78,6 +78,8 @@ public class MedunnaMainPage {
     @FindBy(xpath="/html/body/div/div/div/div[2]/nav/div/ul/li[7]/div/a[1]")
     public WebElement patient;
 
+    @FindBy(xpath="//*[@id=\"entity-menu\"]/div/a[9]") public WebElement messages;
+
 
     @FindBy(xpath="//li[@id='entity-menu']//a[2]") public WebElement staff;
 
