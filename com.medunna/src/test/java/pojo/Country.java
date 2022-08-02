@@ -4,12 +4,11 @@ public class Country{
 	private String name;
 	private int id;
 
-	@Override
- 	public String toString(){
-		return 
-			"Country{" + 
-			"name = '" + name + '\'' + 
-			",id = '" + id + '\'' + 
-			"}";
-		}
+	public String getName(){
+		return name;
+	}
+
+	public int getId(){
+		return id;
+	}
 }

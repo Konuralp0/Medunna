@@ -14,22 +14,51 @@ public class User{
 	private boolean activated;
 	private String ssn;
 
-	@Override
- 	public String toString(){
-		return 
-			"User{" + 
-			"firstName = '" + firstName + '\'' + 
-			",lastName = '" + lastName + '\'' + 
-			",createdDate = '" + createdDate + '\'' + 
-			",langKey = '" + langKey + '\'' + 
-			",resetDate = '" + resetDate + '\'' + 
-			",createdBy = '" + createdBy + '\'' + 
-			",imageUrl = '" + imageUrl + '\'' + 
-			",id = '" + id + '\'' + 
-			",login = '" + login + '\'' + 
-			",email = '" + email + '\'' + 
-			",activated = '" + activated + '\'' + 
-			",ssn = '" + ssn + '\'' + 
-			"}";
-		}
+	public String getFirstName(){
+		return firstName;
+	}
+
+	public String getLastName(){
+		return lastName;
+	}
+
+	public String getCreatedDate(){
+		return createdDate;
+	}
+
+	public String getLangKey(){
+		return langKey;
+	}
+
+	public String getResetDate(){
+		return resetDate;
+	}
+
+	public String getCreatedBy(){
+		return createdBy;
+	}
+
+	public String getImageUrl(){
+		return imageUrl;
+	}
+
+	public int getId(){
+		return id;
+	}
+
+	public String getLogin(){
+		return login;
+	}
+
+	public String getEmail(){
+		return email;
+	}
+
+	public boolean isActivated(){
+		return activated;
+	}
+
+	public String getSsn(){
+		return ssn;
+	}
 }

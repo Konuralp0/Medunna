@@ -17,7 +17,8 @@ public class MedunnaAppointmentPage {
     @FindBy(xpath="//textarea[@id='appointment-anamnesis']") public WebElement anamnesis;
     @FindBy(xpath="//textarea[@id='appointment-treatment']") public WebElement treatment;
     @FindBy(xpath="//textarea[@id='appointment-diagnosis']") public WebElement diagnosis;
-    @FindBy(xpath="//span[normalize-space()='Save']") public WebElement save;
+    @FindBy(xpath="/html/body/div/div/div/div[4]/div/div/div/div[3]/div/form/button") public WebElement save;
+    @FindBy( xpath= "//select[@class = 'form-control is-touched is-dirty av-valid form-control']") public WebElement statusCompleted;
 
 
     @FindBy(xpath="//td[normalize-space()='135183']") public WebElement id;
