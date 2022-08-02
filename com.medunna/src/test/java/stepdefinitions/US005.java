@@ -84,7 +84,7 @@ public class US005 {
 
     @Then("Telefon numarasi icin hata mesajinin cikmadigini test eder")
     public void telefonNumarasiIcinHataMesajininCikmadiginiTestEder() {
-        us007.isPresent(mainPage.emailVerification);
+        us007.isPresent(mainPage.phoneVerification);
 
     }
 
