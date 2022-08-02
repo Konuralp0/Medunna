@@ -11,9 +11,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
     Scenario: Yonetici "SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and state / City" gibi hasta bilgilerini gorebilir
       Given medunna ana sayfasina gider
-      And anasayfada giris ikonuna tiklar
-      And Sign in secenegini secer
-      And admin username ve sifresini girer
+      And Login as admin
       And admin items ve titles a tiklar
       Then Patient i secer
       And Bilgilerini gorebildigini dogrular
@@ -22,9 +20,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
       Scenario: Yeni hasta olusturma ve ulke ayarlarinda State us state olmali
         Given medunna ana sayfasina gider
-        And anasayfada giris ikonuna tiklar
-        And Sign in secenegini secer
-        And admin username ve sifresini girer
+        And Login as admin
         And admin items ve titles a tiklar
         Then Patient i secer
         And yeni bir hasta olustura tiklar
@@ -36,9 +32,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
       Scenario: Admin herhangi bir hastayi silebilir
         Given medunna ana sayfasina gider
-        And anasayfada giris ikonuna tiklar
-        And Sign in secenegini secer
-        And admin username ve sifresini girer
+        And Login as admin
         And admin items ve titles a tiklar
         Then Patient i secer
         And Delete seceginin basilabilir oldugunu test eder

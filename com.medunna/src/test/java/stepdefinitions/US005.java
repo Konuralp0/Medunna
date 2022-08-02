@@ -93,24 +93,11 @@ public class US005 {
         mainPage.openSignIn.click();
     }
 
-    @And("Sign in secenegini secer")
-    public void signInSeceneginiSecer() {
-        mainPage.signIn.click();
-    }
 
-    @And("kullanici adini ve sifresini girer")
-    public void kullaniciAdiniVeSifresiniGirer() {
-        mainPage.username.sendKeys(ConfigReader.getProperty("adminUsername") +Keys.TAB);
-        mainPage.password.sendKeys(ConfigReader.getProperty("adminPassword"));
-    }
 
-    @And("Sign in butonuna tiklar")
-    public void signInButonunaTiklar() {
-        mainPage.sigInButton.click();
-    }
 
-    @Then("uygulamada oturum actigini test eder")
-    public void uygulamadaOturumActiginiTestEder() {
-        Assert.assertTrue("Hesaba giris yapilamadi",mainPage.administration.isDisplayed());
-    }
+
+
+
+
 }
