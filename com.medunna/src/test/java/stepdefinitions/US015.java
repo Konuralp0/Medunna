@@ -90,7 +90,7 @@ public class US015 {
         Select selectCountry = new Select(medunnaCreatePatientPage.countryName);
         selectCountry.selectByVisibleText("USA");
         Select selectState = new Select(medunnaCreatePatientPage.stateCityName);
-        selectState.selectByVisibleText("Califronia");
+        selectState.selectByIndex(0);
     }
 
     @And("Delete seceginin basilabilir oldugunu test eder")
