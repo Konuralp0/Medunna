@@ -54,6 +54,9 @@ public class MedunnaStaffPage {
 
     @FindBy(xpath="//a[@class='btn btn-danger btn-sm']")
     public WebElement deleteButton;
+    @FindBy(xpath = "(//span[contains(text(),'Show Appointments')])[1]") public WebElement showAppointments;
+    @FindBy(xpath = "(//span[contains(text(),'Show Tests')])[1]") public WebElement showTests;
+
 
 
 
