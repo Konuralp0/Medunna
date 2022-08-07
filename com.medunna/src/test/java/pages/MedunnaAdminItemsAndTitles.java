@@ -62,7 +62,9 @@ public class MedunnaAdminItemsAndTitles {
     @FindBy(xpath="//select[@id='staff-user']") public WebElement userName;
     @FindBy(xpath="//tbody/tr[1]/td[15]/div[1]/a[2]//*[name()='svg']") public WebElement editStaff;
     @FindBy(xpath="//tbody/tr[1]/td[15]/div[1]/a[3]//*[name()='svg']//*[name()='path' and contains(@fill,'currentCol')]") public WebElement deleteStaff;
-
+    @FindBy(xpath = "//span[normalize-space()='Physician']") public WebElement physicianButton;
+    @FindBy(xpath = "//a[normalize-space()='2001']") public WebElement userSelectDoctor;
+    @FindBy(xpath = "//span[normalize-space()='ROLE_PHYSICIAN']") public WebElement testRolePhysician;
 
 
 
