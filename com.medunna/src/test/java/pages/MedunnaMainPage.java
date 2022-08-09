@@ -58,7 +58,7 @@ public class MedunnaMainPage {
     @FindBy(xpath="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement openSignIn;
 
-
+//a[@aria-haspopup='true']
 
     @FindBy(xpath="//a[@id='login-item']")
     public WebElement signIn;

@@ -27,8 +27,11 @@ public class US022 {
 
     @And("staff kullanici adini ve sifresini girer")
     public void staffKullaniciAdiniVeSifresiniGirer() {
-        mainPage.username.sendKeys("asa" +Keys.TAB);
+        Driver.wait(2);
+        mainPage.username.sendKeys("asa" );
+        Driver.wait(2);
         mainPage.password.sendKeys("123456");
+        Driver.wait(2);
 
     }
 
@@ -37,19 +40,21 @@ public class US022 {
         mainPage.mYPAGES.click();
     }
 
-    @And("Search patient sekmesine tiklar")
-    public void searchPatientSekmesineTiklar() {
-        staffPage.searchPatient.click();
-    }
+    //@And("Search patient sekmesine tiklar")
+    //public void searchPatientSekmesineTiklar() {
+      //  staffPage.searchPatient.click();
+    //}
 
     @And("Patient SSN bolumune hasta SSN ID si girer")
-    public void patientSSNBolumuneHastaSSNIDSiGirer() {
-        staffPage.ssnInput.sendKeys("587-45-8880");
+    public void patient_ssn_bolumune_hasta_ssn_id_si_girer() {
+        staffPage.patientSSN.sendKeys(ConfigReader.getProperty("completedPatientSSN"));
 
     }
 
     @Then("Hasta bilgilerini gorebildigini test eder")
     public void hastaBilgileriniGorebildiginiTestEder() {
+        Driver.wait(2);
+        staffPage.patientSSN.click();
         Assert.assertTrue( staffPage.patientFindVerification.isDisplayed());
     }
 
@@ -70,6 +75,63 @@ public class US022 {
 
     @And("view result a tiklar")
     public void viewResultATiklar() {
+
+    }
+
+    @And("Ana sayfa giris ikonuna tiklar")
+    public void ana_sayfa_giris_ikonuna_tiklar() {
+        Driver.wait(3);
+        mainPage.openSignIn.click();
+        Driver.wait(2);
+
+    }
+
+    @Then("Testlerin gorundugunu kontrol eder")
+    public void testlerinGorundugunuKontrolEder() {
+        Assert.assertTrue(staffPage.testsID.isDisplayed());
+        Assert.assertTrue(staffPage.testsName.isDisplayed());
+        Assert.assertTrue(staffPage.testsDescription.isDisplayed());
+        Assert.assertTrue(staffPage.testsDate.isDisplayed());
+        Assert.assertTrue(staffPage.testsCreatedDate.isDisplayed());
+        Assert.assertTrue(staffPage.testsAppointment.isDisplayed());
+
+
+
+
+    }
+
+
+
+    @And("secilen test icin edit butonuna tiklar")
+    public void secilenTestIcinEditButonunaTiklar() {
+        staffPage.testResultsEditButton.click();
+    }
+
+    @Then("secilen testlerin gorunebilecegini ve duzenleyebilecegini test eder")
+    public void secilenTestlerinGorunebileceginiVeDuzenleyebileceginiTestEder() {
+        Assert.assertTrue(staffPage.editTestResult.isDisplayed());
+
+
+        staffPage.testResultResult.sendKeys("30");
+        staffPage.testResultSaveButton.click();
+        Assert.assertTrue(staffPage.istResultUpdated.isDisplayed());
+
+
+
+
+    }
+
+    @Then("Bilgilerin gorulabilecegini yada girilebilecegini test eder")
+    public void bilgilerinGorulabileceginiYadaGirilebileceginiTestEder() {
+        Assert.assertTrue(staffPage.testResultID.isDisplayed());
+        Assert.assertTrue(staffPage.testResultDate.isDisplayed());
+        Assert.assertTrue(staffPage.testResultCreatedDate.isDisplayed());
+        Assert.assertTrue(staffPage.testResultTestItem.isDisplayed());
+        Assert.assertTrue(staffPage.testResultTest.isDisplayed());
+
+        staffPage.testResultSaveButton.click();
+        Assert.assertTrue(staffPage.istResultUpdated.isDisplayed());
+
 
     }
 }
