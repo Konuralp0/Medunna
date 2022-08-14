@@ -4,6 +4,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.MedunnaMainPage;
 import utilities.Driver;
 
@@ -26,11 +27,11 @@ public class US006 {
     @Then("Kullanici bilgilerinin dogrulugunu test eder")
     public void kullaniciBilgilerininDogrulugunuTestEder() {
         String userFirstNameText= mainPage.firstName.getText();
-        Assert.assertEquals("info", userFirstNameText);
+        Assert.assertEquals("cok", userFirstNameText);
         String userLastNameText= mainPage.lastName.getText();
-        Assert.assertEquals("tech", userLastNameText);
+        Assert.assertEquals("hasta", userLastNameText);
         String userEmailText= mainPage.email.getText();
-        Assert.assertEquals("infotech@medunna.com", userEmailText);
+        Assert.assertEquals("hsta@mail.com", userEmailText);
 
     }
     @And("Save butonuna tiklar")
@@ -47,8 +48,20 @@ public class US006 {
     }
 
 
+    @And("kullanici adini {string} ve sifresini {string} girer")
+    public void kullaniciAdiniVeSifresiniGirer(String username, String password) {
+        mainPage.signIn.click();
+        Driver.wait(2);
+        mainPage.username.sendKeys(username+ Keys.ENTER);
+        mainPage.password.sendKeys(password+Keys.ENTER);
 
+    }
 
-
-
+    @And("sign in butonu ile giris yapar")
+    public void signInButonuIleGirisYapar() {
+        Driver.wait(2);
+        mainPage.accountMenu.click();
+        mainPage.signIn.click();
+        Driver.wait(2);
+    }
 }

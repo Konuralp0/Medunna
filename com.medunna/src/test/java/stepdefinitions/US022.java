@@ -14,26 +14,6 @@ public class US022 {
     MedunnaMainPage mainPage = new MedunnaMainPage();
     MedunnaStaffPage staffPage = new MedunnaStaffPage();
 
-    @And("Staff olarak  siteye giris yapar")
-    public void staffOlarakSiteyeGirisYapar() {
-        mainPage.signInRegister.click();
-        mainPage.signIn.click();
-        mainPage.username.sendKeys("asa" );
-        mainPage.password.sendKeys("123456");
-        mainPage.sigInButton.click();
-        Driver.wait(2);
-
-    }
-
-    @And("staff kullanici adini ve sifresini girer")
-    public void staffKullaniciAdiniVeSifresiniGirer() {
-        Driver.wait(2);
-        mainPage.username.sendKeys("asa" );
-        Driver.wait(2);
-        mainPage.password.sendKeys("123456");
-        Driver.wait(2);
-
-    }
 
     @Given("My Pages sekmesine tiklar")
     public void myPagesSekmesineTiklar() {
@@ -68,23 +48,13 @@ public class US022 {
         staffPage.showTests.click();
     }
 
-    @Then("Sonuclari sayilarla duzenleyebilecegini test eder")
-    public void sonuclariSayilarlaDuzenleyebileceginiTestEder() {
 
-    }
 
     @And("view result a tiklar")
     public void viewResultATiklar() {
 
     }
 
-    @And("Ana sayfa giris ikonuna tiklar")
-    public void ana_sayfa_giris_ikonuna_tiklar() {
-        Driver.wait(3);
-        mainPage.openSignIn.click();
-        Driver.wait(2);
-
-    }
 
     @Then("Testlerin gorundugunu kontrol eder")
     public void testlerinGorundugunuKontrolEder() {

@@ -1,18 +1,10 @@
 @us018
 
 Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
-  Background: Admin olarak giris yapilir
-    Given Medunna ana sayfasina gider
-    And ana sayfa giris ikonuna tiklar
-    And Sign in secenegini secer
-    And admin kullanici adini ve sifresini girer
-    Then Sign in butonuna tiklar
-
-
-
-
   Scenario: Admin SSN ID ye gore kayitli bir kisiyi arayabilir
-    Given Items&titles butonuna tiklar
+    Given Medunna ana sayfasina gider
+    And Admin olarak giris yapar
+    And Items&titles butonuna tiklar
     And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
     And Use Search kutusunu isaretle
@@ -22,7 +14,9 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
     And tarayiciyi kapatir
 
   Scenario: Doktor bilgilerinde adi soyadi dogum tarihi vb olmalidir
-    Given Items&titles butonuna tiklar
+    Given Medunna ana sayfasina gider
+    And Admin olarak giris yapar
+    And Items&titles butonuna tiklar
     And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
     And Use Search kutusunu isaretle
@@ -32,7 +26,10 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
     And tarayiciyi kapatir
 
   Scenario: Admin doktor uzmanligi muayene ucreti girebilmelidir
-    Given Physicians menusune giris yapar
+    Given Medunna ana sayfasina gider
+    And Admin olarak giris yapar
+    And Items&titles butonuna tiklar
+    And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
     And Speciality menusune tiklar ve bir uzmanlik dali secer
     Then secimi kontrol eder
@@ -42,7 +39,10 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
 
   Scenario: Admin doktor fotografi yukleyebilmelidir
-    Given Physicians menusune giris yapar
+    Given Medunna ana sayfasina gider
+    And Admin olarak giris yapar
+    And Items&titles butonuna tiklar
+    And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
     And image file butonuna tiklar  ve doktor fotografi yukler
     Then fotografin yuklendigini test eder
@@ -50,7 +50,10 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
 
   Scenario: Admin mevcut kullanicilar arasindan doktoru secebilmelidir
-    Given Admin menusune gider
+    Given Medunna ana sayfasina gider
+    And Admin olarak giris yapar
+    And Items&titles butonuna tiklar
+    And Admin menusune gider
     And User Management butonuna tiklar
     And Kullanicilar arasindan doktor secer
     Then doktor rolu oldugunu test eder
@@ -61,6 +64,7 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
     Given Physicians menusune giris yapar
     And view butonuna tiklar
     Then bilgilerin goruntulandigini test eder
+    And tarayiciyi kapatir
 
 
 

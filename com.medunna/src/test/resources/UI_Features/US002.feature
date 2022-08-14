@@ -36,3 +36,25 @@ Feature: Kayit olmak icin email and username bilgileri girilebilmelidir
     And     New password kutusuna tiklar
     Then    Email kutusunun altinda email gerekli yazdigini test eder.
     And     tarayiciyi kapatir
+
+  Scenario: Kullanici adi ve Email api kullanilarak dogrulanmalidir
+    Given Kullanici bilgileri icin request gonderilir.
+    Then Status kodunun 200 oldugunu test eder
+    And  kullanıcı adı "<username>" api tarafından doğrulanmalıdır
+
+
+    Examples: username_validation
+      |username|
+      |infoTech|
+
+
+  @EmailApi
+  Scenario Outline: TC08_email_validation_api
+    Given user sends a get request for users data US_002
+    Then Status kodunun 200 oldugunu test eder
+    And email "<email>" api tarafından doğrulanmalıdır
+
+    Examples:
+      |email|
+      |infotech@medunna.com|
+

@@ -93,11 +93,11 @@ public class MedunnaMainPage {
     @FindBy(xpath=" //span[normalize-space()='Send an Appointment Request']") public WebElement sendAppointmentRequestButton;
     @FindBy(xpath=" //div[@class='Toastify']//span[1]") public WebElement isAppointmentSuccessful;
     @FindBy(xpath = "//span[normalize-space()='User management']") public  WebElement userManagement;
-    @FindBy(xpath = "//span[normalize-space()='info tech']")public WebElement accountMenu;
+
     @FindBy(xpath = "//li[@id='account-menu']//div[@role='menu']//a[1]") public WebElement userSettings;
     @FindBy(xpath = "//button[@type='submit']") public WebElement userSettingsSave;
     @FindBy(xpath = "//div[@role='alert']") public WebElement userDatesUpdatedVerification;
-
+    @FindBy(id = "account-menu") public WebElement accountMenu;
 
 
 

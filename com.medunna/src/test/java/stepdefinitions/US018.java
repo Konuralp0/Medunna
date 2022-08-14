@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import pages.MedunnaAdminItemsAndTitles;
 import pages.MedunnaMainPage;
 import pages.MedunnaPhysicianPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US018 {
@@ -198,5 +199,16 @@ public class US018 {
     public void adminKullaniciAdiniVeSifresiniGirer() {
         mainPage.username.sendKeys("infoTech" +Keys.TAB);
         mainPage.password.sendKeys("Admin123.");
+    }
+
+    @And("Admin olarak giris yapar")
+    public void adminOlarakGirisYapar() {
+        mainPage.signInRegister.click();
+        mainPage.signIn.click();
+        mainPage.username.sendKeys(ConfigReader.getProperty("adminUsername") + Keys.TAB);
+        mainPage.password.sendKeys(ConfigReader.getProperty("adminPassword")+Keys.TAB);
+        mainPage.sigInButton.click();
+        Driver.wait(2);
+
     }
 }

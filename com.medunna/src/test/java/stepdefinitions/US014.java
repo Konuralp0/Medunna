@@ -1,62 +1,50 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import pages.MedunnaAppointmentPage;
 import pages.MedunnaMainPage;
 import pages.MedunnaPhysicianPage;
+import utilities.Driver;
 
 import java.util.List;
 
 public class US014 {
     MedunnaMainPage mainPage=new MedunnaMainPage();
     MedunnaPhysicianPage physicianPage=new MedunnaPhysicianPage();
-    MedunnaAppointmentPage appointmentPage=new MedunnaAppointmentPage();
-    @And("View butonuna tiklar")
-    public void viewButonunaTiklar() {
-        appointmentPage.appointmentViewButton.click();
 
-    }
+
 
     @Then(value = "istenilen bilgilerin goruntulendigini kontrol eder")
     public void istenilenBilgilerinGoruntulendiginiKontrolEder() {
 
-        Assert.assertTrue(appointmentPage.appointmentIDView.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentStartDateView.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentEndDateView.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentDescriptionView.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentCreateDateView.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentStatusView.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentPatientView.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientID.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientStartDate.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientEndDate.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientStatus.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientDescription.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientCreatedDate.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientRoom.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientAppointment.isDisplayed());
+        Assert.assertTrue(physicianPage.inPatientPatientInformation.isDisplayed());
 
     }
 
     @And("Edit butonuna tiklar")
     public void editButonunaTiklar() {
-        appointmentPage.appointmentEditButton.click();
-    }
-
-    @Then("istenilen bilgilerin guncellenebildigini kontrol eder")
-    public void istenilenBilgilerinGuncellenebildiginiKontrolEder() {
-        Assert.assertTrue(appointmentPage.appointmentIDEdit.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentStartDateEdit.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentEndDateEdit.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentDescriptionEdit.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentStatusEdit.isDisplayed());
-        Assert.assertTrue(appointmentPage.appointmentEPatientEdit.isDisplayed());
-
+        physicianPage.inPatientEdit.click();
     }
 
     @Then("Status un guncellenebildigini kontrol eder")
     public void statusUnGuncellenebildiginiKontrolEder() {
 
         String[] statusType = {"UNAPPROVED, DISCHARGED, STILL, STAYING, CANCELLED"};
-        Select appointmentStatus =new Select(appointmentPage.appointmentStatusEdit);
+        Select inPatientStatus =new Select(physicianPage.inPatientEditStatus);
 
-        List<WebElement> status = appointmentStatus.getOptions();
+        List<WebElement> status = inPatientStatus.getOptions();
         for (WebElement condition:status) {
             boolean match = false;
             for (int i=0; i<statusType.length; i++){
@@ -71,6 +59,27 @@ public class US014 {
     }
 
 
+    @And("In Patient butonuna tiklar")
+    public void inPatientButonunaTiklar() {
+        physicianPage.inPatientButton.click();
+        Driver.wait(2);
+    }
 
+    @Given("Doktor yatan hasta icin uygun bir oda secer")
+    public void doktorYatanHastaIcinUygunBirOdaSecer() {
+
+        Select select=new Select(physicianPage.editInPatientRoom);
+        select.selectByIndex(6);
+    }
+
+    @And("Doktor save butonuna basar")
+    public void doktorSaveButonunaBasar() {
+        physicianPage.inPatientSaveButton.click();
+    }
+
+    @Then("odanin guncellendigini test eder")
+    public void odaninGuncellendiginiTestEder() {
+        Assert.assertTrue(physicianPage.updatedMessage.isDisplayed());
+    }
 }
 

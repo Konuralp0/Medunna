@@ -116,9 +116,6 @@ public class MedunnaAppointmentPage {
     @FindBy(xpath = "(//textarea[@id='appointment-description']")
     public WebElement appointmentDescriptionEdit;
 
-    @FindBy(xpath = "(//select[@id='appointment-status']")
-
-    public WebElement appointmentStatusEdit;
 
     @FindBy(xpath = "//select[@id='appointment-patient']")
     public WebElement appointmentEPatientEdit;

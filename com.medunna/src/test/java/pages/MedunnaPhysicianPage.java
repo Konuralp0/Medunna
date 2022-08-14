@@ -48,11 +48,21 @@ public MedunnaPhysicianPage(){
 @FindBy(xpath = "//span[normalize-space()='Save']") public WebElement physicianEditSaveButton;
 @FindBy(xpath = "//span[normalize-space()='Save']") public WebElement physicianEditChangedExamFee;
 @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[5]") public WebElement physicianDeleteButton;
-
-
-
-
-
+@FindBy(xpath = "//span[normalize-space()='ID']") public WebElement inPatientID;
+@FindBy(xpath = "//span[normalize-space()='Start Date']")public WebElement inPatientStartDate;
+@FindBy(xpath = "//span[normalize-space()='End Date']") public WebElement inPatientEndDate;
+@FindBy(xpath = "//span[normalize-space()='Status']") public WebElement inPatientStatus;
+@FindBy(xpath = "//span[normalize-space()='Description']") public WebElement inPatientDescription;
+@FindBy(xpath = "//span[normalize-space()='Created Date']") public WebElement inPatientCreatedDate;
+@FindBy(xpath = "(//span[contains(text(),'Room')])[2]") public WebElement inPatientRoom;
+@FindBy(xpath = "//table[@class='table']//thead//tr//th//span[contains(text(),'Appointment')]") public WebElement inPatientAppointment;
+@FindBy(xpath = "//table[@class='table']//thead//tr//th//span[contains(text(),'Patient')]") public WebElement inPatientPatientInformation;
+@FindBy(xpath = "//span[normalize-space()='In Patient']") public WebElement inPatientButton;
+@FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")public WebElement inPatientEdit;
+@FindBy(xpath = "//select[@id='in-patient-status']") public WebElement inPatientEditStatus;
+@FindBy(xpath ="//*[contains (text(),'The In Patient is updated with identifier')]") public WebElement updatedMessage;
+@FindBy(xpath = "//button[@id='save-entity']") public WebElement inPatientSaveButton;
+@FindBy(xpath = "//select[@id='in-patient-room']") public WebElement editInPatientRoom;
 
 
 
