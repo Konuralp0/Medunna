@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,7 +57,7 @@ public class US011 {
     @Then("Edit sayfasinda oldugunu test eder")
     public void editSayfasindaOldugunuTestEder() {
         String url = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals("https://www.medunna.com/appointment-update/153041",url);
+        Assert.assertEquals("https://www.medunna.com/appointment-update/154734",url);
         Driver.wait(2);
 
 
@@ -77,8 +78,8 @@ public class US011 {
     @And("Save butonuna tiklar")
     public void saveButonunaTiklar() {
         Driver.wait(2);
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(medunnaAppointmentPage.save)).click();
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(medunnaAppointmentPage.save)).click();
+        JavascriptExecutor executor = (JavascriptExecutor)Driver.getDriver();
+        executor.executeScript("arguments[0].click();",medunnaAppointmentPage.save);
 
 
 
@@ -87,10 +88,6 @@ public class US011 {
     @Then("Yeni guncel  bilgileri gorebildigini test eder")
     public void yeniGuncelBilgileriGorebildiginiTestEder() {
         Assert.assertTrue(medunnaAppointmentPage.physician.isDisplayed());
-        Assert.assertTrue(medunnaAppointmentPage.id.isDisplayed());
-        Assert.assertTrue(medunnaAppointmentPage.patient.isDisplayed());
-        Assert.assertTrue(medunnaAppointmentPage.startDate.isDisplayed());
-        Assert.assertTrue(medunnaAppointmentPage.endDate.isDisplayed());
         Assert.assertTrue(medunnaAppointmentPage.status.isDisplayed());
     }
 

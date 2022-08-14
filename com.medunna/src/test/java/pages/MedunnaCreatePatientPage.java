@@ -16,6 +16,6 @@ public class MedunnaCreatePatientPage {
     @FindBy(xpath="//input[@id='patient-phone']") public WebElement phone;
     @FindBy(xpath="//input[@id='patient-adress']") public WebElement address;
     @FindBy(xpath="//select[@id='patient-country']") public WebElement countryName;
-    @FindBy(xpath="//select[@id='patient-cstate']") public WebElement stateCityName;
+    @FindBy(xpath="//*[@id=\"patient-cstate\"]") public WebElement stateCityName;
 
 }
