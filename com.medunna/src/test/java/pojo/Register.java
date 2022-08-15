@@ -1,126 +1,163 @@
 package pojo;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.Arrays;
+import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Register {
-    private String firstName;
+public class Register{
     private String lastName;
+    private String lastModifiedDate;
+    private String lastModifiedBy;
+    private String login;
+    private List<String> authorities;
     private String ssn;
-    private String login; // this is username
-    private String langKey; // language key
+    private String firstName;
     private String password;
+    private String createdDate;
+    private String langKey;
+    private String createdBy;
+    private String imageUrl;
+    private int id;
     private String email;
-    //    private int id;
-    private boolean activated; // If the user is activated by admin it is giving us true, if not it gives us false;
-    private String [] authorities;
+    private boolean activated;
 
-    public Register(String firstName, String lastName, String ssn, String login, String password, String email) {
-        this.firstName = firstName;
+    public void setLastName(String lastName){
         this.lastName = lastName;
-        this.ssn = ssn;
-        this.login = login;
-        this.password = password;
-        this.email = email;
     }
 
-    public Register() {
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
+    public String getLastName(){
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastModifiedDate(String lastModifiedDate){
+        this.lastModifiedDate = lastModifiedDate;
     }
 
-    public String getSsn() {
-        return ssn;
+    public String getLastModifiedDate(){
+        return lastModifiedDate;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setLastModifiedBy(String lastModifiedBy){
+        this.lastModifiedBy = lastModifiedBy;
     }
 
-    public String getLogin() {
-        return login;
+    public String getLastModifiedBy(){
+        return lastModifiedBy;
     }
 
-    public void setLogin(String login) {
+    public void setLogin(String login){
         this.login = login;
     }
 
-    public String getLangKey() {
-        return langKey;
+    public String getLogin(){
+        return login;
     }
 
-    public void setLangKey(String langKey) {
-        this.langKey = langKey;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
-    public boolean isActivated() {
-        return activated;
-    }
-
-    public void setActivated(boolean activated) {
-        this.activated = activated;
-    }
-
-    public String[] getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(String[] authorities) {
+    public void setAuthorities(List<String> authorities){
         this.authorities = authorities;
     }
 
+    public List<String> getAuthorities(){
+        return authorities;
+    }
+
+    public void setSsn(String ssn){
+        this.ssn = ssn;
+    }
+
+    public String getSsn(){
+        return ssn;
+    }
+
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+
+    public String getFirstName(){
+        return firstName;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setCreatedDate(String createdDate){
+        this.createdDate = createdDate;
+    }
+
+    public String getCreatedDate(){
+        return createdDate;
+    }
+
+    public void setLangKey(String langKey){
+        this.langKey = langKey;
+    }
+
+    public String getLangKey(){
+        return langKey;
+    }
+
+    public void setCreatedBy(String createdBy){
+        this.createdBy = createdBy;
+    }
+
+    public String getCreatedBy(){
+        return createdBy;
+    }
+
+    public void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl(){
+        return imageUrl;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setActivated(boolean activated){
+        this.activated = activated;
+    }
+
+    public boolean isActivated(){
+        return activated;
+    }
+
     @Override
-    public String toString() {
-        return "Registrant{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", ssn='" + ssn + '\'' +
-                ", login='" + login + '\'' +
-                ", langKey='" + langKey + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-//                ", id=" + id +
-                ", activated=" + activated +
-                ", authorities=" + Arrays.toString(authorities) +
-                '}';
+    public String toString(){
+        return
+                "Register{" +
+                        "lastName = '" + lastName + '\'' +
+                        ",lastModifiedDate = '" + lastModifiedDate + '\'' +
+                        ",lastModifiedBy = '" + lastModifiedBy + '\'' +
+                        ",login = '" + login + '\'' +
+                        ",authorities = '" + authorities + '\'' +
+                        ",ssn = '" + ssn + '\'' +
+                        ",firstName = '" + firstName + '\'' +
+                        ",password = '" + password + '\'' +
+                        ",createdDate = '" + createdDate + '\'' +
+                        ",langKey = '" + langKey + '\'' +
+                        ",createdBy = '" + createdBy + '\'' +
+                        ",imageUrl = '" + imageUrl + '\'' +
+                        ",id = '" + id + '\'' +
+                        ",email = '" + email + '\'' +
+                        ",activated = '" + activated + '\'' +
+                        "}";
     }
 }
