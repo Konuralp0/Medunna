@@ -4,12 +4,15 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.MedunnaMainPage;
 import pages.MedunnaRegisterPage;
+import pojo.Register;
+import pojo.ResponseActual;
 import utilities.Driver;
 
 import static io.restassured.RestAssured.given;
@@ -18,10 +21,12 @@ import static utilities.Authentication.tokenGenerate;
 
 
 public class US002 {
+    Register registerExpected = new Register(); // expected Data
+    Response response;
     Faker faker = new Faker();
     MedunnaMainPage mainPage = new MedunnaMainPage();
     MedunnaRegisterPage registerPage = new MedunnaRegisterPage();
-    Response response;
+
 
     @And("tarayiciyi kapatir.")
     public void tarayiciyiKapatir() {
@@ -105,14 +110,47 @@ public class US002 {
         response.then().assertThat().statusCode(statusCode);
     }
 
-    @And("kullanıcı adı {string} api tarafından doğrulanmalıdır")
-    public void kullanıcıAdıApiTarafındanDoğrulanmalıdır(String string) {
-        //string= readFile(ConfigurationReader.getProperty("US_002_applicant_data"));
-        String[] registrantData= string.split("'");
 
-        String username= registrantData[7];
+    @Given("Kullanici bilgileri icin parametre olusturulur.")
+    public void kullaniciBilgileriIcinParametreOlusturulur() {
+        String email = faker.internet().emailAddress(); // rastgele mail adresi olusacak.
+        String firstName= faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String login = firstName+"_"+lastName;
+        String password = faker.internet().password(8,12,true,true,true);
+        String ssn = faker.idNumber().ssnValid();// xxx-xx-xxxx
 
-        response.then().assertThat().body("login",hasItem(username.toLowerCase()));
+        registerExpected.setEmail(email);
+        registerExpected.setFirstName(firstName);
+        registerExpected.setLastName(lastName);
+        registerExpected.setLogin(login);
+        registerExpected.setPassword(password);
+        registerExpected.setSsn(ssn);
+
+
+
+
+    }
+
+    @Given("Kullanici bilgileri icin post request gonderilir.")
+    public void kullaniciBilgileriIcinPostRequestGonderilir() {
+        response = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .header("Authorization","Bearer "+ tokenGenerate())
+                .body(registerExpected).when()
+                .post("https://medunna.com/api/register");
+
+
+    }
+
+    @Then("Kullanici adi ve Email dogrulanir.")
+    public void kullaniciAdiVeEmailDogrulanir() {
+        ResponseActual actualData =response.as(ResponseActual.class);
+
+        Assert.assertEquals(registerExpected.getLogin().toLowerCase(),actualData.getLogin());
+        Assert.assertEquals(registerExpected.getEmail(),actualData.getEmail());
+
+
 
     }
 }
