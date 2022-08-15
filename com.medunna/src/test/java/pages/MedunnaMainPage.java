@@ -58,7 +58,7 @@ public class MedunnaMainPage {
     @FindBy(xpath="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement openSignIn;
 
-
+//a[@aria-haspopup='true']
 
     @FindBy(xpath="//a[@id='login-item']")
     public WebElement signIn;
@@ -92,7 +92,12 @@ public class MedunnaMainPage {
     public WebElement myAppointments;
     @FindBy(xpath=" //span[normalize-space()='Send an Appointment Request']") public WebElement sendAppointmentRequestButton;
     @FindBy(xpath=" //div[@class='Toastify']//span[1]") public WebElement isAppointmentSuccessful;
+    @FindBy(xpath = "//span[normalize-space()='User management']") public  WebElement userManagement;
 
+    @FindBy(xpath = "//li[@id='account-menu']//div[@role='menu']//a[1]") public WebElement userSettings;
+    @FindBy(xpath = "//button[@type='submit']") public WebElement userSettingsSave;
+    @FindBy(xpath = "//div[@role='alert']") public WebElement userDatesUpdatedVerification;
+    @FindBy(id = "account-menu") public WebElement accountMenu;
 
 
 
