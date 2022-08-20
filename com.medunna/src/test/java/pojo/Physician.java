@@ -50,4 +50,21 @@ public class Physician{
 			",user = '" + user + '\'' + 
 			"}";
 		}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+
+		return lastName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getSpeciality() {
+		return speciality;
+	}
 }
