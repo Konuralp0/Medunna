@@ -47,7 +47,7 @@ public class MedunnaAppointmentPage {
     @FindBy(xpath="//*[@id=\"app-view-container\"]/div/div/div/div/div/table/tbody/tr[4]/td[13]/div/a[3]") public WebElement payment;
     @FindBy(css=".btn.btn-success.btn-sm") public WebElement showInvoice;
     @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/table/thead/tr[5]/th[2]") public WebElement invoiceShownName;
-@FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/table/thead/tr[7]/th[2]") public WebElement invoiceShownCost;
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/table/thead/tr[7]/th[2]") public WebElement invoiceShownCost;
     @FindBy(xpath=" //span[normalize-space()='Edit']") public WebElement editAppointments;
     @FindBy(xpath=" //span[normalize-space()='Create or Edit an Appointment']") public WebElement editAppointmentPage;
     @FindBy(xpath=" //select[@id='appointment-status']") public WebElement statusPopup;
@@ -68,7 +68,7 @@ public class MedunnaAppointmentPage {
     @FindBy(xpath = "//span[normalize-space()='31/07/22 03:00']") public WebElement selectedAppointmentEndDate;
     @FindBy(xpath = "//span[normalize-space()='End DateTime']") public WebElement appointmentEndDate;
     @FindBy(xpath = "//td[normalize-space()='UNAPPROVED']") public WebElement selectedAppointmentStatus;
-    @FindBy(xpath = "//h2[@id='appointment-heading']") public WebElement patientAppointments;
+    @FindBy(xpath = "//h2[@id='appointment-heading']") public WebElement appointmentsHeading;
 
     @FindBy(xpath = "//a[normalize-space()='2301']")
     public WebElement appointmentPatientID;
