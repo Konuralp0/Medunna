@@ -13,6 +13,8 @@ public class Appointment{
 	private String prescription;
 	private String patient;
 	private Physician physician;
+
+
 	private int id;
 	private List<CtestsItem> ctests;
 	private String startDate;
@@ -73,4 +75,28 @@ public class Appointment{
 	public void setStatus(String status){
 		this.status = status;
 	}
+
+
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public String getPatient() {
+		return patient;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+	public int getId(){
+
+		return id;
+	}
+
 }
