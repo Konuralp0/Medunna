@@ -41,3 +41,12 @@ Feature: Kayit olmak icin email and username bilgileri girilebilmelidir
     Given   Kullanici bilgileri icin parametre olusturulur.
     And   Kullanici bilgileri icin post request gonderilir.
     Then   Kullanici adi ve Email dogrulanir.
+
+  Scenario: Email DB ile dogrulanmalidir
+    Given kullanici DB ile baglanti kurar
+    And kullanıcı sorguyu DB'ye gönderir ve "<login>" oturum açma ile kullanıcı verilerini alır
+    Then DB ile "<email>" dogrulamasi yapilir
+    Examples: test data
+      |email| login|
+      |infotech@medunna.com| infotech|
+
