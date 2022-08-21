@@ -229,37 +229,8 @@ public class US018 {
     static Response response;
     static Physician physician = new Physician();
 
-    public static void main(String[] args) throws JsonProcessingException {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("medunnaUrl")).build();
-        spec.pathParams("1", "api", "2", "physicians", "3", "2051");
-        // https://www.medunna.com/api/physicians/2051
-
-        response = given().spec(spec)
-                .header("Authorization", "Bearer " + tokenGenerate())
-                .contentType(ContentType.JSON)
-                .when()
-                .get("/{1}/{2}/{3}");
-        response.prettyPrint();
-        response.then().statusCode(200);
-        ObjectMapper obj = new ObjectMapper();
-        Physician actualPhisician = obj.readValue(response.asString(), Physician.class);
-        System.out.println("Actual Data: " + actualPhisician);
-        Assert.assertEquals("Cemile", actualPhisician.getFirstName());
-        Assert.assertEquals("Turkmen", actualPhisician.getLastName());
-        Assert.assertEquals(2051, actualPhisician.getId());
-        Assert.assertEquals("NUCLEAR_MEDICINE", actualPhisician.getSpeciality());
 
 
-    }
-
-    @Given("C user enters expected data for phyisician")
-    public void c_user_enters_expected_data_for_phyisician() {
-        response = given().spec(spec)
-                .header("Authorization", "Bearer " + tokenGenerate())
-                .contentType(ContentType.JSON)
-                .when()
-                .get("/{1}/{2}/{3}");
-    }
 
 
     @Then("API ile kayitlar dogrulanir")
@@ -273,41 +244,15 @@ public class US018 {
         Assert.assertEquals(2051, actualPhisician.getId());
         Assert.assertEquals("NUCLEAR_MEDICINE", actualPhisician.getSpeciality());
     }
-    @Given("MKT user creates a connection with db")
-    public void mkt_user_creates_a_connection_with_db() {
-        DBUtils.createConnection();
-    }
-    @Given("MKT user sends the query to db and gets the user data with ssn number {string}")
-    public void mkt_user_sends_the_query_to_db_and_gets_the_user_data_with_ssn_number(String ssn) {
-        String query = "select * from jhi_user where ssn=\'" + ssn + "\'";
-        registrantMap.putAll(DBUtils.getRowMap(query));
-        System.out.println("registrantMap = " + registrantMap);
-    }
-    @Then("MKT validates db registrant data  {string}")
-    public void mktValidatesDbRegistrantData(String ssn) {
-        Map<String, Object> expectedData = new HashMap<String, Object>();
-        expectedData.put("ssn", ssn);
-        try {
-            readAllRegistrantInDBDataMap(expectedData);
-            saveRegistrantDataDB(registrantMap);
-        }catch (Exception e) {
-            System.out.println("data is already in the list");
-        }
-        Assert.assertTrue(registrantMap.entrySet().containsAll(expectedData.entrySet()));
 
-    }
+
 
     private void saveRegistrantDataDB(Map<String, Object> registrantMap) {
     }
 
     private void readAllRegistrantInDBDataMap(Map<String, Object> expectedData) {
     }
-    @Given("C User set the path params for phyisician")
-    public void c_user_set_the_path_params_for_phyisician() {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("medunnaUrl")).build();
-        spec.pathParams("1", "api", "2", "physicians","3","2051");
 
-    }
 
     @Given("Path parametreleri belirlenir")
     public void pathParametreleriBelirlenir() {

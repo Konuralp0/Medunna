@@ -172,7 +172,7 @@ public class US002 {
     }
     Map<String, Object> registrantMap = new HashMap<String, Object>();
 
-    @Then("DB ile {email} dogrulamasi yapilir")
+    @Then("DB ile {string} dogrulamasi yapilir")
     public void dbIleDogrulamasiYapilir(String email) {
         Map<String,Object>expectedData=new HashMap<>();
         expectedData.put("email",email);

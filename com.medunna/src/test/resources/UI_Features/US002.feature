@@ -46,6 +46,7 @@ Feature: Kayit olmak icin email and username bilgileri girilebilmelidir
     Given kullanici DB ile baglanti kurar
     And kullanıcı sorguyu DB'ye gönderir ve "<login>" oturum açma ile kullanıcı verilerini alır
     Then DB ile "<email>" dogrulamasi yapilir
+    And kullanici DB baglantisini keser
     Examples: test data
       |email| login|
       |infotech@medunna.com| infotech|

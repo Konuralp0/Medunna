@@ -17,7 +17,10 @@ import pages.MedunnaMainPage;
 import pages.MedunnaPhysicianPage;
 import pojo.Appointment;
 import utilities.ConfigReader;
+import utilities.DBUtils;
 import utilities.Driver;
+
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -124,5 +127,20 @@ public class US010 {
         assertEquals(startDate, actualAppointment.getStartDate());
         assertEquals(endDate, actualAppointment.getEndDate());
         assertEquals(status,actualAppointment.getStatus());
+    }
+    List< Object > dbAppointment;
+
+
+
+    @And("kullanıcı sorguyu DB'ye gönderir ve  kullanıcı verilerini {string} alır")
+    public void kullanıcıSorguyuDBYeGönderirVeKullanıcıVerileriniAlır(String status) {
+        String query = "SELECT * FROM  appointment";
+        dbAppointment=DBUtils.getColumnData(query,status);
+
+    }
+
+    @And("kullanici DB baglantisini keser")
+    public void kullaniciDBBaglantisiniKeser() {
+        DBUtils.closeConnection();
     }
 }
