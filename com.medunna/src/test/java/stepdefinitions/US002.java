@@ -13,7 +13,11 @@ import pages.MedunnaMainPage;
 import pages.MedunnaRegisterPage;
 import pojo.Register;
 import pojo.ResponseActual;
+import utilities.DBUtils;
 import utilities.Driver;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItem;
@@ -151,6 +155,28 @@ public class US002 {
         Assert.assertEquals(registerExpected.getEmail(),actualData.getEmail());
 
 
+
+    }
+
+    @Given("kullanici DB ile baglanti kurar")
+    public void kullaniciDBIleBaglantiKurar() {
+        DBUtils.createConnection();
+    }
+
+    @And("kullanıcı sorguyu DB'ye gönderir ve {string} oturum açma ile kullanıcı verilerini alır")
+    public void kullanıcıSorguyuDBYeGönderirVeOturumAçmaIleKullanıcıVerileriniAlır(String ssn) {
+        String query = "select * from jhi_user where ssn=\'" + ssn + "\'";
+        registrantMap.putAll(DBUtils.getRowMap(query));
+        System.out.println("registrantMap = " + registrantMap);
+
+    }
+    Map<String, Object> registrantMap = new HashMap<String, Object>();
+
+    @Then("DB ile {string} dogrulamasi yapilir")
+    public void dbIleDogrulamasiYapilir(String email) {
+        Map<String,Object>expectedData=new HashMap<>();
+        expectedData.put("email",email);
+        Assert.assertTrue(registrantMap.entrySet().containsAll(expectedData.entrySet()));
 
     }
 }

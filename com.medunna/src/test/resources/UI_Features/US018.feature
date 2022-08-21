@@ -93,18 +93,10 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
     Given DB ile baglanti kurulur
     And sorguyu db'ye gönderilir ve "<ssn>" ssn numarasıyla kullanıcı verileri alinir
     Then Veriler DB ile dogrulanir "<ssn>"
+    And kullanici DB baglantisini keser
       |ssn|
       |397-51-2256|
 
-  Scenario Outline: Validate a physician using DB
-
-    Given MKT user creates a connection with db
-    And MKT user sends the query to db and gets the user data with ssn number "<ssn>"
-    Then MKT validates db registrant data  "<ssn>"
-
-    Examples: test data
-      |ssn|
-      |397-51-2256|
 
 
 

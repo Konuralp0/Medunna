@@ -37,4 +37,8 @@ Feature: Doktor (Physician) randevulari
       | id     | patientId | startDate            | endDate              | status     |
       | 151593 |155383    | 2022-08-31T00:00:00Z | 2022-08-31T01:00:00Z | COMPLETED |
 
+  Scenario: DB ile randevulari dogrular
+    Given kullanici DB ile baglanti kurar
+    Then kullanıcı sorguyu DB'ye gönderir ve  kullanıcı verilerini "status" alır
+    And kullanici DB baglantisini keser
 
