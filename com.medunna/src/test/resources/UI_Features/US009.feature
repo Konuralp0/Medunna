@@ -30,7 +30,7 @@ Feature:US009
     And   tarayiciyi kapatir
 
   Scenario:Kullanıcı, API kullanarak tüm hasta bilgilerini doğrulamalıdır.
-  Given
+  Given :
 
 
 
