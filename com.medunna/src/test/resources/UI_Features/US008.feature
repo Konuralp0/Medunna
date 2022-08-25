@@ -3,20 +3,18 @@ Feature: US008
 
     Given Medunna Ana sayfasina gider
     And Anasayfada giris ikonuna tiklar
-    And Sign in Secenegini Secer
+    And Sign in secenegini secer
     And Kullanici Adini ve Sifresini girer
     And Sign in Butonuna tiklar
     And Kullanici Adina tiklar
     And Password sekmesini secer
     And Mevcut sifreyi girer
-    And New password yerine iki harfli ilk harfi büyük bir sifre girer
+    And New password yerine bes harfli ilk harfi buyuk bir sifre girer
     And herhangi bir rakam girer
-    Then Strength Barin bir arttgini Test eder
+    Then Strength Barin bir arttigini Test eder
     And Ozel bir karakter girer
-    Then Strengt Barin bir defa daha arttgini test eder
+    Then Strengt Barin bir defa daha arttigini test eder
     And New password confirmation girer
-    And Save Butonuna tiklar
-    Then sifrenin degistigini test eder
-    And Save butonuna tekrar tiklar
+    Then New Passwordun confirme oldugunu test eder
     Then eski sifrenin kullanilamayacagini test eder
     And Tarayiciyi kapatir
