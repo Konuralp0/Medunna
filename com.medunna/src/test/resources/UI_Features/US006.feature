@@ -9,7 +9,7 @@ Feature: Kullanıcı bilgisi sekmesi anasayfada düzenlenebilir olmalıdır
     And Kullanici menusu butonuna tiklar
     And Settings butonuna tiklar
     Then Kullanici bilgilerinin dogrulugunu test eder
-    And Save butonuna tiklar
+    And User Settings Save butonuna tiklar
     Then Firstname, lastname ve Email guncelleme seceneginin oldugunu kontrol eder
     And tarayiciyi kapatir.
     Examples:

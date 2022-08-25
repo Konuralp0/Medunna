@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.MedunnaMainPage;
 import pages.MedunnaPhysicianPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.List;
@@ -33,8 +34,8 @@ public class US014 {
 
     }
 
-    @And("Edit butonuna tiklar")
-    public void editButonunaTiklar() {
+    @And("Physicians Edit butonuna tiklar")
+    public void PhysiciansEditButonunaTiklar() {
         physicianPage.inPatientEdit.click();
     }
 
@@ -80,6 +81,15 @@ public class US014 {
     @Then("odanin guncellendigini test eder")
     public void odaninGuncellendiginiTestEder() {
         Assert.assertTrue(physicianPage.updatedMessage.isDisplayed());
+    }
+    @And("doktor kullanici adini ve sifresini girer")
+    public void doktorKullaniciAdiniVeSifresiniGirer() {
+
+        mainPage.username.sendKeys(ConfigReader.getProperty("asa"));
+        mainPage.password.sendKeys(ConfigReader.getProperty("123456"));
+
+        Driver.wait(2);
+
     }
 }
 

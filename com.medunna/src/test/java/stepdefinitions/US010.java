@@ -37,40 +37,6 @@ public class US010 {
     public static RequestSpecification spec;
 
 
-
-
-    @And("doktor kullanici adini ve sifresini girer")
-    public void doktorKullaniciAdiniVeSifresiniGirer() {
-
-        mainPage.username.sendKeys(ConfigReader.getProperty("asa"));
-        mainPage.password.sendKeys(ConfigReader.getProperty("123456"));
-
-        Driver.wait(2);
-
-    }
-    @And("Mypages butonuna tiklar")
-    public void mypagesButonunaTiklar() {
-        mainPage.mYPAGES.click();
-        Driver.wait(2);
-
-
-    }
-
-
-
-    @And("Items&titles butonuna tiklar")
-    public void clicksOnItemsAndTitles() {
-        medunnaAdminItemsAndTitles.itemsTitlesButton.click();
-
-    }
-    @Then("MyAppointmenti secer")
-    public void myappointmentiSecer() {
-        mainPage.myAppointments.click();
-        Driver.wait(2);
-    }
-
-
-
     @Then("randevu listesi ve zaman dilimleri oldugunu kontrol eder")
     public void randevuListesiVeZamanDilimleriOldugunuKontrolEder() {
         Assert.assertTrue(appointmentPage.appointmentsHeading.isDisplayed());
@@ -142,5 +108,12 @@ public class US010 {
     @And("kullanici DB baglantisini keser")
     public void kullaniciDBBaglantisiniKeser() {
         DBUtils.closeConnection();
+    }
+
+    @And("Sign in secenegini secer")
+    public void signInSeceneginiSecer() {
+
+            mainPage.signIn.click();
+
     }
 }

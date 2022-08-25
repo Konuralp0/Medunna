@@ -46,6 +46,11 @@ public class US018 {
         physicianPage.createNewPhysicianButton.click();
         Driver.wait(2);
     }
+    @And("Items&titles butonuna tiklar")
+    public void clicksOnItemsAndTitles() {
+        medunnaAdminItemsAndTitles.itemsTitlesButton.click();
+
+    }
 
     @Given("Use Search kutusunu isaretle")
     public void useSearchKutusunuIsaretle() {
@@ -215,16 +220,7 @@ public class US018 {
 
     }
 
-    @And("Admin olarak giris yapar")
-    public void adminOlarakGirisYapar() {
-        mainPage.signInRegister.click();
-        mainPage.signIn.click();
-        mainPage.username.sendKeys(ConfigReader.getProperty("adminUsername") + Keys.TAB);
-        mainPage.password.sendKeys(ConfigReader.getProperty("adminPassword") + Keys.TAB);
-        mainPage.sigInButton.click();
-        Driver.wait(2);
 
-    }
 
     static Response response;
     static Physician physician = new Physician();

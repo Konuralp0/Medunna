@@ -34,8 +34,8 @@ public class US006 {
         Assert.assertEquals("hsta@mail.com", userEmailText);
 
     }
-    @And("Save butonuna tiklar")
-    public void saveButonunaTiklar() {
+    @And("User Settings Save butonuna tiklar")
+    public void UserSettingsSaveButonunaTiklar() {
         mainPage.userSettingsSave.click();
 
     }

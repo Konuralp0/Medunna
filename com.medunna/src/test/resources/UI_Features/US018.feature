@@ -3,7 +3,7 @@
 Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
   Scenario: Admin SSN ID ye gore kayitli bir kisiyi arayabilir
     Given Medunna ana sayfasina gider
-    And Admin olarak giris yapar
+    And admin username ve sifresini girer
     And Items&titles butonuna tiklar
     And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
@@ -15,7 +15,7 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
   Scenario: Doktor bilgilerinde adi soyadi dogum tarihi vb olmalidir
     Given Medunna ana sayfasina gider
-    And Admin olarak giris yapar
+    And admin username ve sifresini girer
     And Items&titles butonuna tiklar
     And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
@@ -27,7 +27,7 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
   Scenario: Admin doktor uzmanligi muayene ucreti girebilmelidir
     Given Medunna ana sayfasina gider
-    And Admin olarak giris yapar
+    And admin username ve sifresini girer
     And Items&titles butonuna tiklar
     And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
@@ -40,7 +40,7 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
   Scenario: Admin doktor fotografi yukleyebilmelidir
     Given Medunna ana sayfasina gider
-    And Admin olarak giris yapar
+    And admin username ve sifresini girer
     And Items&titles butonuna tiklar
     And Physicians menusune giris yapar
     And Create a new Physician butonuna tiklar
@@ -51,7 +51,7 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
   Scenario: Admin mevcut kullanicilar arasindan doktoru secebilmelidir
     Given Medunna ana sayfasina gider
-    And Admin olarak giris yapar
+    And admin username ve sifresini girer
     And Items&titles butonuna tiklar
     And Admin menusune gider
     And User Management butonuna tiklar
@@ -61,7 +61,9 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
 
   Scenario:  Admin doktor bilgilerini view modu ile goruntuleyebilir
-    Given Physicians menusune giris yapar
+    Given Medunna ana sayfasina gider
+    And admin username ve sifresini girer
+    And Physicians menusune giris yapar
     And view butonuna tiklar
     Then bilgilerin goruntulandigini test eder
     And tarayiciyi kapatir
@@ -69,7 +71,9 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
 
   Scenario:  Admin yeni veriler kullanarak doktor bilgilerini guncelleyebilir
-    Given Physicians menusune giris yapar
+    Given Medunna ana sayfasina gider
+    And admin username ve sifresini girer
+    And Physicians menusune giris yapar
     And degistirecegi doktor satirinda edit butonuna tiklar
     And secilen doktor bilgilerinde degisiklik yapilir
     And save butonuna basilir
@@ -79,7 +83,9 @@ Feature: Admin olarak Yeni Physicians Olustur  Guncelle  Goruntule ve Sil
 
 
   Scenario: Admin girilmis doktorlari silebilir
-    Given Physicians menusune giris yapar
+    Given Medunna ana sayfasina gider
+    And admin username ve sifresini girer
+    And Physicians menusune giris yapar
     Then secilen doktorun silinebildigini test eder
     And tarayiciyi kapatir
 
