@@ -99,6 +99,9 @@ public class MedunnaMainPage {
     @FindBy(xpath = "//div[@role='alert']") public WebElement userDatesUpdatedVerification;
     @FindBy(id = "account-menu") public WebElement accountMenu;
 
+    @FindBy(xpath = "//span[text()='CONTACT']")
+    public WebElement contactButton;
+
 
 
 

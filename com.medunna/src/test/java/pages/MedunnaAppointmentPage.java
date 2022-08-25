@@ -120,6 +120,26 @@ public class MedunnaAppointmentPage {
     @FindBy(xpath = "//select[@id='appointment-patient']")
     public WebElement appointmentEPatientEdit;
 
+    @FindBy(css = "a.btn-success.btn-sm")
+    public WebElement requestATestButton;
+
+    @FindBy(id = "1404")
+    public WebElement sodiumCheckbox;
+
+    @FindBy(id = "1402")
+    public WebElement ureaCheckbox;
+
+    @FindBy(id = "save-entity")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[2]")
+    public WebElement ilkTestIcerik;
+
+    @FindBy(xpath = "//tbody/tr[2]/td[2]")
+    public WebElement ikinciTestIcerik;
+
+
+
 
 
 
