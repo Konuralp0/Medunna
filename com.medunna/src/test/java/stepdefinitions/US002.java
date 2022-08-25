@@ -36,12 +36,7 @@ public class US002 {
     public void tarayiciyiKapatir() {
     }
 
-    @And("Username kutusuna tiklar.")
-    public void usernameKutusunaTiklar() {
-        Driver.wait(2);
-        registerPage.registerusername.click();
-        Driver.wait(2);
-    }
+
     @And("Email kutusuna tiklar.")
     public void emailKutusunaTiklar() {
         registerPage.email.click();
@@ -98,21 +93,7 @@ public class US002 {
     }
 
 
-    @Given("Kullanici bilgileri icin request gonderilir.")
-    public void kullaniciBilgileriIcinRequestGonderilir() {
-        response= given().headers(
-                "Authorization","Bearer "+ tokenGenerate(),
-                "Content-Type", ContentType.JSON,
-                "Accept",ContentType.JSON
-        ).when().get("https://medunna.com/api/appointments?=size=10000");
 
-
-    }
-
-    @Then("Status kodunun {int} oldugunu test eder")
-    public void statusKodununOldugunuTestEder(int statusCode) {
-        response.then().assertThat().statusCode(statusCode);
-    }
 
 
     @Given("Kullanici bilgileri icin parametre olusturulur.")

@@ -4,7 +4,7 @@ Feature: Hasta Test sonuclari (Staff)
   Scenario: user (Staff) can search about patient by SSN id
     Given Medunna ana sayfasina gider
     And Staff olarak giris yapar
-    And My Pages sekmesine tiklar
+    And Staff My Pages sekmesine tiklar
     And Search patient sekmesine tiklar
     And Patient SSN bolumune hasta SSN ID si girer
     Then  Hasta bilgilerini gorebildigini test eder
