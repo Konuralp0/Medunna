@@ -14,14 +14,18 @@ public class US004 {
     MedunnaMainPage mainPage = new MedunnaMainPage();
     MedunnaLoginPage logPage = new MedunnaLoginPage();
 
+
     @And("kullanici adini ve sifresini girer")
     public void kullaniciAdiniVeSifresiniGirer() {
         mainPage.username.sendKeys(ConfigReader.getProperty("adminUsername") + Keys.TAB);
+        Driver.wait(3);
         mainPage.password.sendKeys(ConfigReader.getProperty("adminPassword"));
+        Driver.wait(3);
     }
     @And("Sign in butonuna tiklar")
     public void signInButonunaTiklar() {
         mainPage.sigInButton.click();
+        Driver.wait(3);
     }
 
     @Then("uygulamada oturum actigini test eder")
@@ -49,6 +53,7 @@ public class US004 {
         Assert.assertTrue("cancel button display ..", logPage.cancelButton.isDisplayed());
 
     }
+
 
 
 }
