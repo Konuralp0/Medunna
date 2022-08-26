@@ -17,7 +17,7 @@ Feature: "Physician (Doctor) Edit Inpatient (Yatılı Tedavi) işlemleri yapabil
     And tarayiciyi kapatir
 
   Scenario: Status" doktor tarafindan UNAPPROVED, DISCHARGED, STILL STAYING veya CANCELLED olarak guncellenebilmeli
-    Given Edit butonuna tiklar
+    Given Physicians Edit butonuna tiklar
     Then Status un guncellenebildigini kontrol eder
     And tarayiciyi kapatir.
 

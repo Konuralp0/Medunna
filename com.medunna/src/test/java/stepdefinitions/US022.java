@@ -15,8 +15,8 @@ public class US022 {
     MedunnaStaffPage staffPage = new MedunnaStaffPage();
 
 
-    @Given("My Pages sekmesine tiklar")
-    public void myPagesSekmesineTiklar() {
+    @Given("Staff My Pages sekmesine tiklar")
+    public void StaffMyPagesSekmesineTiklar() {
         mainPage.mYPAGES.click();
     }
 
@@ -31,12 +31,7 @@ public class US022 {
 
     }
 
-    @Then("Hasta bilgilerini gorebildigini test eder")
-    public void hastaBilgileriniGorebildiginiTestEder() {
-        Driver.wait(2);
-        staffPage.patientSSN.click();
-        Assert.assertTrue( staffPage.patientFindVerification.isDisplayed());
-    }
+
 
     @And("show appointments a tiklar")
     public void showAppointmentsATiklar() {
