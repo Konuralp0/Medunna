@@ -105,6 +105,37 @@ public class MedunnaMainPage {
 
 
 
+    //Create Country
+
+
+    @FindBy(xpath="//li[@id='entity-menu']//div[@role='menu']//a[1]") public WebElement country;
+    @FindBy(xpath="//a[@id='jh-create-entity']") public WebElement createANewCountry;
+    @FindBy(xpath="//input[@id='country-name']") public WebElement name;
+    @FindBy(xpath="//span[normalize-space()='Save']") public WebElement save;
+    @FindBy(xpath="//body/div[@id='root']/div/div[@class='app-container']/div[@id='app-view-container']/div[@class='jh-card card']/div[@class='view-routes']/div[1]") public WebElement countriesCreateANewCountry;
+    @FindBy(xpath="//div[@role='alert']") public WebElement aNewCountryIsCreatedWith;
+
+
+
+    //Delete a country
+
+    @FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/a[3]/span[1]/span[1]") public WebElement deleteCountry;
+    @FindBy(xpath="//div[@role='alert']") public WebElement internalServerError;
+//Bu test hep basariz oluyor cunku silinmiyor
+
+
+    //Create a new city or state
+
+    @FindBy(xpath="//a[8]") public WebElement state;
+    @FindBy(xpath="//span[normalize-space()='Create a new State/City']") public WebElement createANewState;
+    @FindBy(xpath="//input[@id='c-state-name']") public WebElement stateName;
+    @FindBy(xpath="//div[@role='alert']") public WebElement fieldTranslationnotfound;
+
+
+
+
+
+
 
 
 
