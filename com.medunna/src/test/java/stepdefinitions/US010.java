@@ -98,12 +98,7 @@ public class US010 {
 
 
 
-    @And("kullanıcı sorguyu DB'ye gönderir ve  kullanıcı verilerini {string} alır")
-    public void kullanıcıSorguyuDBYeGönderirVeKullanıcıVerileriniAlır(String status) {
-        String query = "SELECT * FROM  appointment";
-        dbAppointment=DBUtils.getColumnData(query,status);
 
-    }
 
     @And("kullanici DB baglantisini keser")
     public void kullaniciDBBaglantisiniKeser() {
@@ -115,5 +110,11 @@ public class US010 {
 
             mainPage.signIn.click();
 
+    }
+
+    @Then("kullanici sorguyu DB ye gonderir ve  kullanici verilerini {string} alir")
+    public void kullaniciSorguyuDBYeGonderirVeKullaniciVerileriniAlir(String status) {
+        String query = "SELECT * FROM  appointment";
+        dbAppointment=DBUtils.getColumnData(query,status);
     }
 }

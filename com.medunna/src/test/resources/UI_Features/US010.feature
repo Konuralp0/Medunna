@@ -39,6 +39,6 @@ Feature: Doktor (Physician) randevulari
 
   Scenario: DB ile randevulari dogrular
     Given kullanici DB ile baglanti kurar
-    Then kullanıcı sorguyu DB'ye gönderir ve  kullanıcı verilerini "status" alır
+    Then kullanici sorguyu DB ye gonderir ve  kullanici verilerini "status" alir
     And kullanici DB baglantisini keser
 
