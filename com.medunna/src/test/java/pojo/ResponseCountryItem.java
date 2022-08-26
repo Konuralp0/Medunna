@@ -1,14 +1,6 @@
 package pojo;
 
-public class Country{
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
+public class ResponseCountryItem{
 	private String name;
 	private int id;
 
