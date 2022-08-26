@@ -24,6 +24,7 @@ public class US005 {
     public void makeAppointmentButonunaTiklar() {
         mainPage.makeAnAppointment.click();
     }
+    
 
     @Given("First name kutusuna uygun isim girer")
     public void first_name_kutusuna_uygun_isim_girer() {

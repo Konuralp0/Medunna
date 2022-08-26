@@ -13,5 +13,9 @@
       Then  e-mail icin hata mesajinin cikmadigini test eder
       And   Telefon kutusuna uygun telefon numarasi girer
       Then  Telefon numarasi icin hata mesajinin cikmadigini test eder
+      And   Tarihin gun ay yil olarak yazildigini test eder
       And   Send an appointment request butonuna tiklar
       Then  Appointment kaydinin basarili oldugunu dogrular
+
+
+

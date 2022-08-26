@@ -26,4 +26,12 @@ public class MedunnaRegisterPage {
     @FindBy(xpath="//div[@class='jh-card card']//li[5]")
     public WebElement strengthFifthBar;
 
+
+   @FindBy(xpath="//input[@id='username']")
+   public WebElement registerusername;
+
+   @FindBy(className = "is-touched is-dirty av-valid form-control") public WebElement usernameVerification;
+   @FindBy(xpath = "//input[@placeholder='Your email']") public WebElement email;
+   @FindBy(className = "is-touched is-dirty av-valid form-control") public WebElement emailVerification;
+
 }
