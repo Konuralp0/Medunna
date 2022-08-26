@@ -1,8 +1,7 @@
 Feature: US008
-  Scenario: Kullanıcı giriş yaptığında Password sekmesi düzenlenebilir olmalıdır.
-
-    Given Medunna Ana sayfasina gider
-    And Anasayfada giris ikonuna tiklar
+  Scenario: Kullanici giris yaptiginda Password sekmesi duzenlenebilir olmalidir.
+    Given medunna ana sayfasina gider
+    And ana sayfa giris ikonuna tiklar
     And Sign in secenegini secer
     And Kullanici Adini ve Sifresini girer
     And Sign in Butonuna tiklar

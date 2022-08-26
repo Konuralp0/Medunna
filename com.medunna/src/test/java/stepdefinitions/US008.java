@@ -18,14 +18,19 @@ public class US008 {
 
     MedunnaUserPasswordPage userPage = new MedunnaUserPasswordPage();
 
-    @Given("Medunna Ana sayfasina gider")
+    /*@Given("Medunna Ana sayfasina gider")
     public void medunnaAnaSayfasinaGider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
-    }
+    }*/
 
     @And("Anasayfada giris ikonuna tiklar")
     public void anasayfadaGirisIkonunaTiklar() {
         mainPage.signInRegister.click();
+        Driver.wait(3);
+    }
+    @And("Sign in secenegini secer")
+    public void sign_InSeceneginiSecer() {
+        mainPage.signIn.click();
         Driver.wait(3);
     }
     @And("Kullanici Adini ve Sifresini girer")
