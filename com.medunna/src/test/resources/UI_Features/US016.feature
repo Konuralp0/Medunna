@@ -45,16 +45,11 @@ Feature: Oda Olusturma / Goruntuleme / Guncelleme /Silme
     And tarayiciyi kapatir
 
 
-  ////Scenario: Validate all rooms with API creating, reading, updating and deleting
+  Scenario: Validate all rooms with API creating, reading, updating and deleting
 
-  ////  Given Medunna ana sayfasina gider
-  ////  And Admin olarak giris yapar
-  ////  And Items&titles butonuna tiklar
-  ////  And Physicians menusune giris yapar
-  ////  And Create a new Physician butonuna tiklar
-  ////  And image file butonuna tiklar  ve doktor fotografi yukler
-  ////  Then fotografin yuklendigini test eder
-  ////  And tarayiciyi kapatir
+    Given Admin kayit icin data olusturur
+    And Admin post request gonderir.
+    Then Admin Api kayitlarini dogrular
 
 
   Scenario: Rooms can be Deleted by admin
@@ -69,10 +64,9 @@ Feature: Oda Olusturma / Goruntuleme / Guncelleme /Silme
     And tarayiciyi kapatir
 
 
-  //Scenario:  DB ile hasta bilgilerini doğrulayın
-//
-   // Given .......
-   // And .......
-  //  Then ...
-   // And tarayiciyi kapatir
+  #Scenario:  DB ile hasta bilgilerini doğrulayın
+
+   #Given .......
+   #And .......
+   #Then ...
 
