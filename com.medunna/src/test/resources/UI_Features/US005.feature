@@ -4,7 +4,7 @@ Feature:
     And   Make appointment butonuna tiklar
     And   First name kutusuna uygun isim girer
     Then  hata mesajinin cikmadigini test eder
-   And   tarayiciyi kapatir
+   #And    tarayiciyi kapatir
 
 
 
