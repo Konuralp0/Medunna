@@ -28,11 +28,7 @@ public class US008 {
         mainPage.signInRegister.click();
         Driver.wait(3);
     }
-    /*@And("Sign in secenegini secer")
-    public void sign_InSeceneginiSecer() {
-        mainPage.signIn.click();
-        Driver.wait(3);
-    }*/
+
     @And("Kullanici Adini ve Sifresini girer")
     public void kullaniciAdiniVeSifresiniGirer() {
         mainPage.username.sendKeys(ConfigReader.getProperty("user1") + Keys.TAB);
