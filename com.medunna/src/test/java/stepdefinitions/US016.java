@@ -1,23 +1,31 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.http.Header;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.Color;
-import pages.MedunnaAdminItemsAndTitles;
-import pages.MedunnaMainPage;
 import pages.MedunnaRoomNewPage;
 import pages.MedunnaRoomPage;
+import pojo.RoomRequest16;
+import pojo.RoomResponse16;
+import utilities.Authentication2;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static utilities.Authentication2.tokenGenerate;
+
 
 public class US016 {
-    MedunnaMainPage mainPage = new MedunnaMainPage();
+
     MedunnaRoomNewPage roomNewPage = new MedunnaRoomNewPage();
     MedunnaRoomPage roomPage = new MedunnaRoomPage();
-    MedunnaAdminItemsAndTitles medunnaAdminItemsAndTitles = new MedunnaAdminItemsAndTitles();
 
     @And("Room menusune giris yapar")
             public void room_menusune_giris_yapar() {
@@ -148,4 +156,65 @@ public class US016 {
         Assert.assertTrue(roomPage.root_delete_succesfull.isDisplayed());
     }
 
+    @And("Admin olarak giris yapar")
+    public void adminOlarakGirisYapar() {
+    }
+
+
+
+    RoomRequest16 exeptedRooms = new RoomRequest16();
+    RoomResponse16 actuelRooms =new RoomResponse16();
+    Faker faker = new Faker();
+    Response response;
+
+
+    @Given("Admin kayit icin data olusturur")
+    public void adminKayitIcinDataOlusturur() {
+        String createdBy = "Set Taroglu";
+        String createdDate = "";
+        String description = "odayi düzenlemek lazim";
+        boolean status = true;
+        //int id= 245047;
+        int price = 400;
+        int roomNumber= 371206;
+        String roomType= "DELUXE";
+        exeptedRooms.setCreatedBy(createdBy);
+        exeptedRooms.setRoomNumber(roomNumber);
+        exeptedRooms.setPrice(price);
+        exeptedRooms.setRoomType(roomType);
+        exeptedRooms.setCreatedDate(createdDate);
+        exeptedRooms.setDescription(description);
+        exeptedRooms.setStatus(status);
+        //exeptedRooms.setId(id);
+
+        System.out.println(exeptedRooms);
+
+
+    }
+
+    @And("Admin post request gonderir.")
+    public void adminPostRequestGonderir() {
+
+        response = RestAssured.given().contentType(ContentType.JSON).header("Authoritazion", "bearer" + Authentication2.tokenGenerate())
+                .body(exeptedRooms).when().post("https://medunna.com/api/rooms");
+
+    }
+
+    @Then("Admin Api kayitlarini dogrular")
+    public void adminApiKayitlariniDogrular() {
+
+        RoomResponse16 actuelData = response.as(RoomResponse16.class);
+
+
+
+        Assert.assertEquals(exeptedRooms.getCreatedBy(), actuelData.getCreatedBy());
+        Assert.assertEquals(exeptedRooms.getRoomType(), actuelData.getRoomType());
+        Assert.assertEquals(exeptedRooms.getRoomNumber(), actuelData.getRoomNumber());
+        Assert.assertEquals(exeptedRooms.getDescription(),actuelData.getDescription());
+        Assert.assertEquals(exeptedRooms.getPrice(),actuelData.getPrice());
+        Assert.assertEquals(exeptedRooms.getStatus(),actuelData.getStatus());
+
+
+        //Assert.assertEquals(exeptedRooms.getId(),actuelData.getId());
+    }
 }

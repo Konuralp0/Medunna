@@ -1,4 +1,4 @@
-package hooks;
+package pages; //burasi daha önce hooks idi ama hata vermisti. pages olarak degistirdim.(remzi)
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -39,7 +39,7 @@ public class Hooks {
             final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png","screenshots");
             Driver.getDriver().get("https://www.medunna.com/logout");
-        }
+        }//buraya bir else yazilmali mi? (remzi)
 
         Driver.closeDriver();
     }
